@@ -1,9 +1,9 @@
 ---
-title: "Welcome to Grenoble!"
+title: "R Workshop for Social Scientists"
 output:
   html_document:
     includes:
       in_header: cover_with_logo.html
 ---
 
-## This is the website of our R community
+## This is the website for all of the materials you'll need for the workshop. Enjoy!

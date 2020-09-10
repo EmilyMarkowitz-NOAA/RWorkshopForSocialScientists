@@ -1,0 +1,26 @@
+name: "R Workshop for Social Scientist"                                  # CHANGE HERE 
+output_dir: "."
+navbar:
+  title: "R Workshop for Social Scientist"    
+  left:
+    - text: "Orga"
+      icon: fa-sitemap
+      href: orga.html
+    - text: "Sessions"
+      icon: fa-calendar
+      href: sessions.html  
+    - text: "Members"
+      icon: fa-user 
+      href: members.html
+    - text: "Blog"
+      icon: fa-rss
+      href: https://github.com/emilyhmarkowitz/RWorkshopForSocialScientists    # CHANGE HERE 
+  right:
+    - icon: fa-envelope-o
+      href: mailto:emily.markowitz@noaa.gov                      # CHANGE HERE 
+    - icon: fa-github
+      href: https://github.com/emilyhmarkowitz/RWorkshopForSocialScientists         # CHANGE HERE 
+output:
+  html_document:
+    theme: cosmo
+    highlight: textmate

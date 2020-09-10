@@ -1,103 +1,43 @@
 ---
-title: "Working sessions"
+title: "Agenda"
 ---
 
-Next session: **Using Git and GitHub with R**, on **February 20th from 16:00 to 18:00 @IMAG, auditorium**.
+We are excited that you will be joining us for this workshop!
 
-Attendance is totally free but registration is mandatory and is on a first come first serve basis.
+Please fill out this [google form](https://docs.google.com/forms/d/e/1FAIpQLSd6yThLtJLjAICFzvOkPGoAou3aJcD-4s-7uhVFfQI3hVaoMQ/viewform?usp=sf_link) to let us know that you will be joining us!
 
-Registration to the event [here](https://www.eventbrite.fr/e/billets-using-git-and-github-with-r-94817169707?utm_term=eventname_text).
-
-Don't forget to subscribe to the [r-in-grenoble newsletter](https://listes.univ-grenoble-alpes.fr/sympa/subscribe/r-in-grenoble?previous_action=info).
-
-
-### Help us communicate
-
-Please talk about our R group with your colleagues. 
-
-You can also print [this poster](Poster 2019-2020.pdf) and put it up somewhere at work.
-
-### Join our R working sessions in Grenoble
-
-Each month, we will organize one working session of 2 hours (on thursdays, from 16h-18h, at the [IMAG building](https://r-in-grenoble.github.io/members.html)). 
-
-Please find the guidelines for these sessions:
-    
-- Everyone is welcome (beginners to advanced R users, just bring your laptop).
-
-- Presentations/tutorials will last 30 to 60 min, on some R topics that can be useful to many people, with practical examples.
-
-- We want to have a lightning talk (5 min) after the main session so that people can quickly present how they use R in their work (or a specific package, etc.).
-
-- During the second part of the session, people could ask and answer some questions about specific problems they encounter when coding in R.
-
-- During this time, food and sodas will be offered by [the Grenoble Alpes Data Institute](https://data-institute.univ-grenoble-alpes.fr/).
-
-- If you wish to share your R experience during a working session and/or to co-animate a working session, please [contact us](mailto:matthieu.rolland@univ-grenoble-alpes.fr).
-
-### Schedule of 2019-2020
+### Course Agenda (Pacific Time) and Links
 
 *Click on the title to see the session description*
 
-```{r setup, include=FALSE, warning=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning=FALSE, error = FALSE, message = FALSE)
 library(tidyverse)
 library(lubridate)
 Sys.setlocale("LC_TIME", "C")
 library(htmltools)
 ```
 
-```{r, warning=FALSE}
-program <- tribble(
-  
-  ~Date, ~Session, ~Title, ~Description, ~Authors,
-  
-  "26/09/2019", "21/30", "Reproducible research in R", 
-  "Reproducibility is a hot topic in modern science. Interest in reproducibility was triggered by the “reproducibility crisis” undergone by many fields in the past decades. A reproducible analysis is an analysis that can be re-run from raw data to final result identically by anybody (including “future you”!) on any computer and at any point in time. In this presentation we will give attendants an overview of many tools implemented in R that help make your work more reproducible and how these are integrated in Rstudio: project management structure, workflow management with {drake}, version control with Git and GitHub, literate programming with Rmarkdown, work compendia and package development and much more.", 
-  "P. Jedynak & M. Rolland",
-  
-  "17/10/2019", "22/30", "Spatial data with packages {sf} and {raster}", 
-  "R is a powerful tool for geospatial data processing, analysis, and visualization. This workshop will provide an introduction to manipulating geospatial data with a few core packages. {sf} provides classes and methods for vector data and is designed to work well with the [tidyverse](http://tidyverse.org/). {raster} provides classes and methods for raster data. We will also see how to create static, animated, and interactive maps with {tmap}, {rasterviz}, and {mapview}.", 
-  "I. Hough",
-  
-  "28/11/2019", "23/30", "An introduction to Bayesian multilevel models using R, brms, and Stan", 
-  "Bayesian multilevel models are increasingly used to overcome the limitations of frequentist approaches in the analysis of complex structured data. During this session, I will briefly introduce the logic of Bayesian inference and motivate the use of multilevel modelling. I will then show how Bayesian multilevel models can be fitted using the probabilistic programming language Stan and the R package brms (Bürkner, 2016). The brms package allows fitting complex nonlinear multilevel (aka 'mixed-effects') models using an understandable high-level formula syntax. I will demonstrate the use of brms with some general examples and discuss model comparison tools available within the package. Prior experience with data manipulation and linear models in R will be helpful.",
-  "L. Nalborczyk",
-  
-  "19/12/2019", "24/30", "Organizing a data challenge in R - moved to 30/01", 
-  "MOVED TO 30/01/20", 
-  "",
-  
-  "30/01/2020", "25/30", "Organizing a data challenge in R", 
-  "Data challenges are original tools to explore computational methods trough active learning and competition approaches. It can be used both (i) to improve pedagogic practices in education and (ii) to address scientific questions, such as benchmarking of computational methods. First, we will present you examples of R data challenges that we have run on the open-source challenge platform codalab (challenges in master classes, remote challenges during scientific conferences or  winter-school-like scientific data challenges). Then, we will give a tutorial to teach you how to easily set up your own data challenge.", 
-  "M. Richard & F. Chuffart",
-  
-  "20/02/2020", "26/30", "Using Git and GitHub with R", 
-  "As nicely written by Hadley Wickham R guru, 'Good coding style is like correct punctuation: you can manage without it, butitsuremakesthingseasiertoread.' In this session, we will review good practices to write R code : 1) style advises, 2) versioning with git. In a first part, we will present some ideas of the tidyverse style guide (following http://style.tidyverse.org/) , the second part will bedevoted to handle the integration between R and Git inside Rstudio. Asan exercise, we will provide you a Rmarkdown file to create a R packagein order to put in practice the previous recommendations and turnpersonal code into reusable code (following http://r-pkgs.had.co.nz).
-  
-Make sure that the following packages are installed on your computer : git, R, RStudio, Rmarkdown, and Roxygen.", 
-  "A. Arnaud",
+```{r}
+Agenda <- data.frame(read_csv("../Agenda.csv"))
 
-  "26/03/2020", "27/30", "Joint presentation with the Python user group - more details soon",
-  "abstract coming", 
-  "M. Rolland & ?",
-  
-  "16/04/2020", "28/30", "R Markdown",
-  "Learn about what is R Markdown and how to use this format. We will also present the many possibilities of R Markdown: 1/ Compile a single R Markdown document to a report in different formats, such as PDF, HTML, or Word. 2/ Create notebooks in which you can directly run code chunks interactively. 3/ Make slides for presentations (HTML5, LaTeX Beamer, or PowerPoint). 4/ Produce dashboards with flexible, interactive, and attractive layouts. 5/ Build interactive applications based on Shiny. 6/ Write journal articles. 7/ Author books of multiple chapters. 8/ Generate websites and blogs.", 
-  "P. Jedynak & M. Rolland",
+Agenda$Date<-paste0(Agenda$Date, " (", Agenda$Start.Time..PT., "-", Agenda$End.Time..PT., ")")
+Agenda$Title<-paste0(Agenda$Course.Segment, " - ", Agenda$Topics)
+Agenda$Authors<-paste0(Agenda$Presenter, " (Host: ", Agenda$Host, "; Help: ", Agenda$Chat.Q.A, ")")
 
-  "28/05/2020", "29/30", "Data manipulation with packages {dplyr} and {data.table}", "Data manipulation is an essential step in any data analysis project. Core package of the tidyverse environment, {dplyr} provides a data manipulation framework that uses an intuitive syntax defined by a small set of verbs. In this tutorial we will learn how to pick observations by their values (filter()), reorder the rows (arrange()), pick variables by their name (select()), create new variables with functions of existing variables (mutate()), collapse many values down to a single summary (summarise()) and combine all these operations using the '%>%' (pipe) operator. This will help you solve the most common data manipulation challenges. **ADD data.table**", "P. Jedynak & I. Hough",
+Agenda<-Agenda[,c("Date","Notes","Title","Authors")]
 
-  "25/06/2020", "30/30", "Data visualisation with package {ggplot2}", "'The simple graph has brought more information to the data analyst’s mind than any other device.' --- John Tukey. {ggplot2} is one of today's most powerful data visualisation suite. In this tutorial we will learn the underlying philosophy behind {ggplot2}: the Grammar of Graphics. We will see how all types of graphs such as histograms, scatterplots, boxplots, probability densities etc. can be specified by a small set of shared parameters, and how understanding what these parameters are and how to use them will allow you to seamlessly produce powerful and complex graphs to better understand your data.", "S. Cadiou & M. Rolland"
+program<-as_tibble(Agenda) #%>%
+  # mutate(Date = dmy(Date))
 
-) %>%
-  mutate(Date = dmy(Date)) 
 
-stopifnot(all(wday(program$Date) == 5)) # Thursdays (begin with Sundays)
+#Come by to ask any questions you have about the course, content, or with specific questions about issues you have in your own analyses.
+
+# stopifnot(all(wday(program$Date) == 5)) # Thursdays (begin with Sundays)
           
-program <- program %>%
-  arrange(Date) %>%
-  mutate(Date = format(Date, format = "%B %d, %Y"))
+# program <- program %>%
+  # arrange(Date) %>%
+  # mutate(Date = format(Date, format = "%B %d, %Y"))
 ```
 
 
@@ -181,7 +121,7 @@ div(
           div(class = "right-authors",
               event[['Authors']])),
       tags$ul(class = "workshops",
-              event[["Description"]])
+              event[["Notes"]])
     )
   })
 ) 
@@ -189,56 +129,3 @@ div(
 
 <br>
 
-### Materials from previous sessions
-
-#### 2019 - 2020
-
-- [Organising a data challenge in R](presentation/20200130_r_meeting_codalab.pdf)
-
-- [An introduction to Bayesian multilevel models using R, brms, and Stan](https://www.barelysignificant.com/slides/RGUG2019)
-
-- Spatial data with packages {sf} and {raster}: [Presentation](https://ihough.github.io/talk_2019-10_geospatial/talk_2019-10_geospatial.html#1); [R script](https://github.com/ihough/talk_2019-10_geospatial/blob/master/mapping_demo.R)
-
-- [Reproducible research in R](https://annakrystalli.me/talks/r-in-repro-research.html)
-
-#### 2018 - 2019
-
-- [Data visualization with {ggplot2}](https://privefl.github.io/R-presentation/ggplot2.html)
-
-- [Data manipulation with package {dplyr}](presentation/dplyr.html)
-
-- [R Markdown](http://privefl.github.io/R-presentation/rmarkdown.html)
-
-- [Good practice for writing R code and R packages](https://magrichard.github.io/good_coding_practices/rpresentation.html)
-
-- Deep Learning with package {keras}: [presentation](presentation/R_in_Grenoble_RPres.zip) and [exercise](presentation/keras.html) ([.Rmd](presentation/keras.Rmd))
-
-- [Manage your workflow with package {drake}](presentation/drake.pdf)
-
-- [Linear models in R](https://t.co/7Wq3MfH6B9)
-
-- [Image processing with package {imager}](http://bit.ly/RUGgre12)
-
-- [What R can do for you](http://bit.ly/RUGgre11)
-
-#### 2017 - 2018
-
-- [Make your personal webpage with R](https://privefl.github.io/R-presentation/rmarkdown-websites.html)
-
-- [Out-of-memory matrices](https://privefl.github.io/R-presentation/bigstatsr.html)
-
-- [Parallel computing](session-parallel.zip)
-
-- [{Rcpp}](https://privefl.github.io/R-presentation/Rcpp.html)
-
-- [Best coding practices](https://jarbel.github.io/Rgoodpractice/rpresentation.html)
-
-- [RStudio and Git](https://privefl.github.io/R-presentation/rstudio-git.html)
-
-- [Geographical Information Systems](http://www-leca.ujf-grenoble.fr/pageperso/boyerfr/ESPACE-PERSO/TP.zip)
-
-- [Network analysis with {igraph}](http://www.gipsa-lab.grenoble-inp.fr/~sophie.achard/Tutorial_brainwaver/tutorial_practice_graph_html.html)
-
-- [Visualization with {ggplot2}](https://privefl.github.io/R-presentation/ggplot2.html)
-
-- [An introduction to R](https://github.com/fchuffar/intro_r)
