@@ -6,4 +6,6 @@ output:
       in_header: cover_with_logo.html
 ---
 
-## This is the website for all of the materials you'll need for the workshop. Enjoy!
+## **This is the website for all of the materials you'll need for the workshop.** 
+
+### Enjoy!
