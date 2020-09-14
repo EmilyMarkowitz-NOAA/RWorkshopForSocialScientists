@@ -30,7 +30,10 @@ Agenda<-Agenda[-1,]
 Agenda0 <- Agenda
 
 not0<-c("", "??", NA)
-Agenda$Date<-paste0(Agenda$Date, " (", Agenda$`Start Time (PT)`, "-", Agenda$`End Time (PT)`, ")")
+Agenda$Date<-paste0(#Agenda$Date, " (", 
+  Agenda$`Start Time (PT)`, "-", Agenda$`End Time (PT)`
+  #, ")"
+  )
 Agenda$Title<-paste0(Agenda$`Course Segment`,
                      ifelse( ( Agenda$`Course Segment` == Agenda$Topics | Agenda$`Course Segment` %in% not0 | Agenda$Topics %in% not0 ), "", " - "), 
                      ifelse( ( Agenda$`Course Segment` == Agenda$Topics | Agenda$Topics %in% not0 ), "", Agenda$Topics) )
@@ -42,22 +45,24 @@ Agenda$Authors<-paste0(ifelse(Agenda$Presenter %in% not0, "", paste0("Presenter:
                        ifelse((Agenda$`Chat/Q&A` %in% not0), "", "; "), # ; 
                        ifelse(Agenda$`Chat/Q&A` %in% not0, "", paste0("Help: ", Agenda$`Chat/Q&A`)) ) # Help
 Agenda$Notes[is.na(Agenda$Notes)]<-""
-# aa<-strsplit(x = Agenda$Notes, split = "\n\n")
-# for (i in 1:length(aa)){
-#   if (length(aa[i][[1]])) {
-#     for (ii in 1:length(aa[i][[1]])) {
-#       # dd<- aa[i][[1]][ii]
-#       if (grepl(pattern = "https://", x = aa[i][[1]][ii], ignore.case = T)) {
-#         bb<-strsplit(x = aa[i][[1]][ii], split = ": ")
-#         # cc<-paste0("[", bb[[1]][1], "] (", bb[[1]][2], ")")
-#         cc<-paste0('<a href=', bb[[1]][1], '>link text</', bb[[1]][2], '>')
-#         aa[i][[1]][ii]<-cc
-#       }
-#     }
-#   }
-#   aa[i][[1]]<-paste(aa[i][[1]], collapse = " ")
-# }
-# Agenda$Notes<-unlist(aa)
+aa<-strsplit(x = Agenda$Notes, split = "\n\n")
+for (i in 1:length(aa)){
+  if (length(aa[i][[1]])) {
+    for (ii in 1:length(aa[i][[1]])) {
+      # dd<- aa[i][[1]][ii]
+      if (grepl(pattern = "https://", x = aa[i][[1]][ii], ignore.case = T)) {
+        bb<-strsplit(x = aa[i][[1]][ii], split = ": ")
+        # cc<-paste0("[", bb[[1]][1], "] (", bb[[1]][2], ")")
+        cc<-paste0('<a href="', bb[[1]][1], '">link text</"', bb[[1]][2], '">')
+        # cc<-paste0('tags$a(href="', bb[[1]][1], '", "', bb[[1]][2], '"')
+        # cc<-paste0("![{",bb[[1]][2],"}]({",bb[[1]][1],"})")
+        aa[i][[1]][ii]<-cc
+      }
+    }
+  }
+  aa[i][[1]]<-paste(aa[i][[1]], collapse = " ")
+}
+Agenda$Notes<-unlist(aa)
 
 Agenda<-Agenda[,c("Date","Notes","Title","Authors")]
 
@@ -156,7 +161,7 @@ $(document).ready(main);
 ## Tuesday, September 22, 2020
 
 ```{r}
-program1<-program[grepl(pattern = "Tuesday, September 22, 2020", x = program$Date), ]
+program1<-program[grepl(pattern = "Tuesday, September 22, 2020", x = Agenda0$Date), ]
 
 div(
   class = "schedule",
@@ -184,7 +189,7 @@ div(
 ## Wednesday, September 23, 2020
 
 ```{r}
-program1<-program[grepl(pattern = "Wednesday, September 23, 2020", x = program$Date), ]
+program1<-program[grepl(pattern = "Wednesday, September 23, 2020", x = Agenda0$Date), ]
 
 div(
   class = "schedule",
@@ -212,7 +217,7 @@ div(
 ## Thursday, September 24, 2020
 
 ```{r}
-program1<-program[grepl(pattern = "Thursday, September 24, 2020", x = program$Date), ]
+program1<-program[grepl(pattern = "Thursday, September 24, 2020", x = Agenda0$Date), ]
 
 div(
   class = "schedule",

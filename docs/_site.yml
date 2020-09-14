@@ -9,9 +9,6 @@ navbar:
     - text: "Presenters"
       icon: fa-user 
       href: members.html
-    - text: "Blog"
-      icon: fa-rss
-      href: https://github.com/emilyhmarkowitz/RWorkshopForSocialScientists    # CHANGE HERE 
   right:
     - icon: fa-envelope-o
       href: mailto:emily.markowitz@noaa.gov                      # CHANGE HERE 
