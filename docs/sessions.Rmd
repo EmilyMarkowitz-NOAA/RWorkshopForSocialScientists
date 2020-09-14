@@ -1,12 +1,10 @@
 ---
-title: "Agenda"
+title: "Course Agenda (Pacific Time) and Links"
 ---
 
 We are excited that you will be joining us for this workshop! Please fill out this [google form](https://docs.google.com/forms/d/e/1FAIpQLSd6yThLtJLjAICFzvOkPGoAou3aJcD-4s-7uhVFfQI3hVaoMQ/viewform?usp=sf_link) to let us know that you will be joining us. 
 
-### Course Agenda (Pacific Time) and Links
-
-*Click on the title to see the session description*
+*Please click on the title to see the session description*
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning=FALSE, error = FALSE, message = FALSE)
@@ -14,14 +12,52 @@ library(tidyverse)
 library(lubridate)
 Sys.setlocale("LC_TIME", "C")
 library(htmltools)
+library("googledrive")
 ```
 
 ```{r}
-Agenda <- data.frame(read_csv("../Agenda.csv"))
+# https://googledrive.tidyverse.org/
+# https://docs.google.com/spreadsheets/d/1NkG331BZW_Q9PuzdhEgW5rB6vkLe0K_Dd1K3iFrAFNw/edit?usp=sharing
+# drive_deauth()
+# drive_auth()
+# drive_download("R Workshop Detailed Schedule", type = "csv")
 
-Agenda$Date<-paste0(Agenda$Date, " (", Agenda$Start.Time..PT., "-", Agenda$End.Time..PT., ")")
-Agenda$Title<-paste0(Agenda$Course.Segment, " - ", Agenda$Topics)
-Agenda$Authors<-paste0(Agenda$Presenter, " (Host: ", Agenda$Host, "; Help: ", Agenda$Chat.Q.A, ")")
+# Agenda <- data.frame(read_csv("../Agenda.csv"))
+
+Agenda <- data.frame(read_csv("../docs/R Workshop Detailed Schedule.csv"))
+names(Agenda)<-Agenda[1,]
+Agenda<-Agenda[-1,]
+Agenda0 <- Agenda
+
+not0<-c("", "??", NA)
+Agenda$Date<-paste0(Agenda$Date, " (", Agenda$`Start Time (PT)`, "-", Agenda$`End Time (PT)`, ")")
+Agenda$Title<-paste0(Agenda$`Course Segment`,
+                     ifelse( ( Agenda$`Course Segment` == Agenda$Topics | Agenda$`Course Segment` %in% not0 | Agenda$Topics %in% not0 ), "", " - "), 
+                     ifelse( ( Agenda$`Course Segment` == Agenda$Topics | Agenda$Topics %in% not0 ), "", Agenda$Topics) )
+
+Agenda$Authors<-paste0(ifelse(Agenda$Presenter %in% not0, "", paste0("Presenter: ", Agenda$Presenter)), #Presenter
+                       ifelse((Agenda$`Chat/Q&A` %in% not0), "", "; "), # ; 
+                       ifelse((Agenda$Presenter %in% not0), "", " "), # Space
+                       ifelse(Agenda$Host %in% not0, "", paste0("Host: ", Agenda$Host)), # Host
+                       ifelse((Agenda$`Chat/Q&A` %in% not0), "", "; "), # ; 
+                       ifelse(Agenda$`Chat/Q&A` %in% not0, "", paste0("Help: ", Agenda$`Chat/Q&A`)) ) # Help
+Agenda$Notes[is.na(Agenda$Notes)]<-""
+# aa<-strsplit(x = Agenda$Notes, split = "\n\n")
+# for (i in 1:length(aa)){
+#   if (length(aa[i][[1]])) {
+#     for (ii in 1:length(aa[i][[1]])) {
+#       # dd<- aa[i][[1]][ii]
+#       if (grepl(pattern = "https://", x = aa[i][[1]][ii], ignore.case = T)) {
+#         bb<-strsplit(x = aa[i][[1]][ii], split = ": ")
+#         # cc<-paste0("[", bb[[1]][1], "] (", bb[[1]][2], ")")
+#         cc<-paste0('<a href=', bb[[1]][1], '>link text</', bb[[1]][2], '>')
+#         aa[i][[1]][ii]<-cc
+#       }
+#     }
+#   }
+#   aa[i][[1]]<-paste(aa[i][[1]], collapse = " ")
+# }
+# Agenda$Notes<-unlist(aa)
 
 Agenda<-Agenda[,c("Date","Notes","Title","Authors")]
 
@@ -61,6 +97,18 @@ program<-as_tibble(Agenda) #%>%
   overflow: auto;
 }
 
+# .workshops-button[data-workshops = "Tuesday, September 22, 2020"]:after {
+#   padding: 0.75em 1.25em;
+#   background-color: #cccccc;
+#   opacity: 0.9;
+#   width: auto;
+#   color: red;
+#   text-align: center;
+#   overflow: auto;
+# }
+
+
+
 .left-date {
   width: 20%;
   float: left;
@@ -70,7 +118,7 @@ program<-as_tibble(Agenda) #%>%
 .center-title {
   width: 60%;
   float: left;
-  text-align: center;
+  text-align: left;
   font-size: 120%;
 }
 
@@ -88,6 +136,7 @@ program<-as_tibble(Agenda) #%>%
   background-color: #333333;
   color: whitesmoke;
 }
+
 ```
 
 ```{js}
@@ -104,18 +153,22 @@ function main() {
 $(document).ready(main);
 ```
 
+## Tuesday, September 22, 2020
 
 ```{r}
+program1<-program[grepl(pattern = "Tuesday, September 22, 2020", x = program$Date), ]
+
 div(
   class = "schedule",
-  apply(program, 1, function(event) {
+  apply(program1, 1, function(event) {
     div(
       class = "limit",
       div(class = "workshops-button", 
           div(class = "left-date", 
               event[['Date']]),
           div(class = "center-title", 
-              tags$i(event[['Title']])),
+              # tags$i(event[['Title']])),
+              tags$b(event[['Title']])),
           div(class = "right-authors",
               event[['Authors']])),
       tags$ul(class = "workshops",
@@ -126,4 +179,61 @@ div(
 ```
 
 <br>
+
+
+## Wednesday, September 23, 2020
+
+```{r}
+program1<-program[grepl(pattern = "Wednesday, September 23, 2020", x = program$Date), ]
+
+div(
+  class = "schedule",
+  apply(program1, 1, function(event) {
+    div(
+      class = "limit",
+      div(class = "workshops-button", 
+          div(class = "left-date", 
+              event[['Date']]),
+          div(class = "center-title", 
+              # tags$i(event[['Title']])),
+              tags$b(event[['Title']])),
+          div(class = "right-authors",
+              event[['Authors']])),
+      tags$ul(class = "workshops",
+              event[["Notes"]])
+    )
+  })
+) 
+```
+
+<br>
+
+
+## Thursday, September 24, 2020
+
+```{r}
+program1<-program[grepl(pattern = "Thursday, September 24, 2020", x = program$Date), ]
+
+div(
+  class = "schedule",
+  apply(program1, 1, function(event) {
+    div(
+      class = "limit",
+      div(class = "workshops-button", 
+          div(class = "left-date", 
+              event[['Date']]),
+          div(class = "center-title", 
+              # tags$i(event[['Title']])),
+              tags$b(event[['Title']])),
+          div(class = "right-authors",
+              event[['Authors']])),
+      tags$ul(class = "workshops",
+              event[["Notes"]])
+    )
+  })
+) 
+```
+
+<br>
+
 
