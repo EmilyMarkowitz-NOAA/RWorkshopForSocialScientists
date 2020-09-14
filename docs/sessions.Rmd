@@ -52,8 +52,8 @@ for (i in 1:length(aa)){
       # dd<- aa[i][[1]][ii]
       if (grepl(pattern = "https://", x = aa[i][[1]][ii], ignore.case = T)) {
         bb<-strsplit(x = aa[i][[1]][ii], split = ": ")
-        # cc<-paste0("[", bb[[1]][1], "] (", bb[[1]][2], ")")
-        cc<-paste0('<a href="', bb[[1]][1], '">link text</"', bb[[1]][2], '">')
+        cc<-paste0("[", bb[[1]][1], "] (", bb[[1]][2], ")")
+        # cc<-paste0('<a href="', bb[[1]][1], '">link text</"', bb[[1]][2], '">')
         # cc<-paste0('tags$a(href="', bb[[1]][1], '", "', bb[[1]][2], '"')
         # cc<-paste0("![{",bb[[1]][2],"}]({",bb[[1]][1],"})")
         aa[i][[1]][ii]<-cc
