@@ -24,9 +24,10 @@ library("googledrive")
 
 # Agenda <- data.frame(read_csv("../Agenda.csv"))
 
-Agenda <- data.frame(read_csv("../docs/R Workshop Detailed Schedule.csv", col_names = FALSE))
+Agenda <- data.frame(read_csv("../R Workshop Detailed Schedule.csv", col_names = FALSE))
 names(Agenda)<-Agenda[2,]
 Agenda<-Agenda[-c(1:2),]
+Agenda$Notes0<-Agenda$Notes
 Agenda0 <- Agenda
 
 not0<-c("", "??", NA)
@@ -35,8 +36,11 @@ Agenda$Date<-paste0(#Agenda$Date, " (",
   #, ")"
   )
 Agenda$Title<-paste0(Agenda$`Course Segment`,
-                     ifelse( ( Agenda$`Course Segment` == Agenda$Topics | Agenda$`Course Segment` %in% not0 | Agenda$Topics %in% not0 ), "", " - "), 
-                     ifelse( ( Agenda$`Course Segment` == Agenda$Topics | Agenda$Topics %in% not0 ), "", Agenda$Topics) )
+                     ifelse( ( Agenda$`Course Segment` == Agenda$Topics | 
+                                 Agenda$`Course Segment` %in% not0 | 
+                                 Agenda$Topics %in% not0 ), "", " - "), 
+                     ifelse( ( Agenda$`Course Segment` == Agenda$Topics | 
+                                 Agenda$Topics %in% not0 ), "", Agenda$Topics) )
 
 Agenda$Authors<-paste0(ifelse(Agenda$Presenter %in% not0, "", paste0("Presenter: ", Agenda$Presenter)), #Presenter
                        ifelse((Agenda$`Chat/Q&A` %in% not0), "", "; "), # ; 
@@ -44,27 +48,52 @@ Agenda$Authors<-paste0(ifelse(Agenda$Presenter %in% not0, "", paste0("Presenter:
                        ifelse(Agenda$Host %in% not0, "", paste0("Host: ", Agenda$Host)), # Host
                        ifelse((Agenda$`Chat/Q&A` %in% not0), "", "; "), # ; 
                        ifelse(Agenda$`Chat/Q&A` %in% not0, "", paste0("Help: ", Agenda$`Chat/Q&A`)) ) # Help
+
 Agenda$Notes[is.na(Agenda$Notes)]<-""
+# Agenda$Notes[1]<-'tags$a(href="www.rstudio.com", "Click here!")'
+# Agenda$Notes[2]<-'<a href="www.rstudio.com">Click here!</a> '
+# Agenda$Notes[3]<-'[Click here!](www.rstudio.com)'
+
 aa<-strsplit(x = Agenda$Notes, split = "\n\n")
 for (i in 1:length(aa)){
-  if (length(aa[i][[1]])) {
+  if (length(aa[i][[1]])!=0) {
     for (ii in 1:length(aa[i][[1]])) {
       # dd<- aa[i][[1]][ii]
       if (grepl(pattern = "https://", x = aa[i][[1]][ii], ignore.case = T)) {
         bb<-strsplit(x = aa[i][[1]][ii], split = ": ")
-        # cc<-paste0("[", bb[[1]][1], "] (", bb[[1]][2], ")")
-        # cc<-paste0('<a href="', bb[[1]][1], '">link text</"', bb[[1]][2], '">')
-        cc<-paste0('tags$a(href="', bb[[1]][1], '", "', bb[[1]][2], '"')
+        # cc<-paste0('["', bb[[1]][1], '"] (', bb[[1]][2], '")')
+        # cc<-paste0('<a href="', bb[[1]][2], '">', bb[[1]][1], '</a>')
+        cc<-paste0('tags$a(href="', bb[[1]][2], '", "', bb[[1]][1], '")')
         # cc<-paste0("![{",bb[[1]][2],"}]({",bb[[1]][1],"})")
-        aa[i][[1]][ii]<-cc
+        # aa[i][[1]][ii]<-paste0("<li>", cc, "</li>")
+        aa[i][[1]][ii]<-cc#paste0('tags$li(', cc, ')')
+      } else {
+        cc<-paste0('tags$p("', aa[i][[1]][ii], '")')
+        # cc<-paste0('<p>', ifelse(is.na(aa[i][[1]][ii]), "", aa[i][[1]][ii]), '</p>')
+        # aa[i][[1]][ii]<-paste0("<li>", cc, "</li>")
+        aa[i][[1]][ii]<-cc#paste0('tags$li(', cc, ')')
+
       }
     }
+      # aa[i][[1]]<-paste0("tags$div(",
+  #                    paste(aa[i][[1]], collapse = " "),
+  #                    ")")
+    aa[i][[1]]<-paste0('tags$li(', paste(aa[i][[1]], collapse = ", "), ')')
+    # aa[i][[1]]<-paste(aa[i][[1]], collapse = ", ")
+  } else {
+    aa[i][[1]]<-""
   }
-  aa[i][[1]]<-paste(aa[i][[1]], collapse = " ")
+  # aa[i][[1]]<-paste0("")
 }
+
 Agenda$Notes<-unlist(aa)
+# Agenda$Notes<-gsub(pattern = "//\", )
+# Agenda$Notes<-gsub(pattern = "\\\\", replacement = "", x = Agenda$Notes)
 
 Agenda<-Agenda[,c("Date","Notes","Title","Authors")]
+
+# Agenda<-Agenda[1,]
+# Agenda0<-Agenda0[1,]
 
 program<-as_tibble(Agenda) #%>%
   # mutate(Date = dmy(Date))
@@ -177,10 +206,11 @@ div(
           div(class = "right-authors",
               event[['Authors']])),
       tags$ul(class = "workshops",
-              event[["Notes"]])
+              (eval(parse(text=event[["Notes"]])) ) )
+              # event[["Notes"]])
     )
   })
-) 
+)
 ```
 
 <br>
@@ -196,19 +226,20 @@ div(
   apply(program1, 1, function(event) {
     div(
       class = "limit",
-      div(class = "workshops-button", 
-          div(class = "left-date", 
+      div(class = "workshops-button",
+          div(class = "left-date",
               event[['Date']]),
-          div(class = "center-title", 
+          div(class = "center-title",
               # tags$i(event[['Title']])),
               tags$b(event[['Title']])),
           div(class = "right-authors",
               event[['Authors']])),
       tags$ul(class = "workshops",
-              event[["Notes"]])
+              (eval(parse(text=event[["Notes"]])) ) )
+              # event[["Notes"]])
     )
   })
-) 
+)
 ```
 
 <br>
@@ -224,19 +255,20 @@ div(
   apply(program1, 1, function(event) {
     div(
       class = "limit",
-      div(class = "workshops-button", 
-          div(class = "left-date", 
+      div(class = "workshops-button",
+          div(class = "left-date",
               event[['Date']]),
-          div(class = "center-title", 
+          div(class = "center-title",
               # tags$i(event[['Title']])),
               tags$b(event[['Title']])),
           div(class = "right-authors",
               event[['Authors']])),
       tags$ul(class = "workshops",
-              event[["Notes"]])
+              (eval(parse(text=event[["Notes"]])) ) )
+              # event[["Notes"]])
     )
   })
-) 
+)
 ```
 
 <br>
