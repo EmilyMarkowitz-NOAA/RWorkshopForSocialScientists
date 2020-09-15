@@ -70,74 +70,90 @@ members$Website<-members$githublink
 library(glue)
 members<-as_tibble(members)
 
-glue_data(members,
+imgs<-glue_data(members,
 '
-  ###{Name}
+  ### {Name}
   ![{githublink}]({imagelink})
 ')
 
 ```
 
+`r imgs `
 
+```{r}
+# m <- leaflet() %>%
+#   addTiles() %>%  # Add default OpenStreetMap map tiles
+#   addMarkers(lng=174.768, lat=-36.852, popup="The birthplace of R")
+
+library(maps)
+mapStates = map("state", fill = TRUE, plot = FALSE)
+# leaflet(data = mapStates) %>% 
+leaflet() %>%
+  addTiles() %>%
+  # addPolygons(fillColor = topo.colors(10, alpha = NULL), stroke = FALSE) %>%
+  addMarkers(lng=members$lon, lat=members$lat, popup=members$Name)
+
+
+```
 
 
 ```{r, include=FALSE}
-# Where are we?
-members <- gs_key("1WyfmLfoAQUP2iRogqcOfYA9Hum7DT0BcVyTtei_6Xjw",
-                  lookup = TRUE, visibility = "private") %>%
-  gs_read() %>%
-  tidyr::unite_(col = "Name", from = c("First name", "Last name"),
-                sep = " ", remove = TRUE) %>%
-  mutate(
-    Name = if_else(is.na(Website), Name,
-                   paste0("<a href='", Website, "' target='_blank'>", Name, "</a>")),
-    Website = NULL,
-    Status = if_else(is.na(Status), "member", Status),
-    infos = paste0(
-      Name, "<br>",
-      if_else(is.na(Institution), "", paste0("at ", Institution, "<br>"))#,
-      # if_else(is.na(Field), "", paste0("in ", Field, "<br>")),
-      # if_else(is.na(Keywords), "", paste0("knows ", Keywords))
-    )
-  )
-
-# check wrong entries for status
-stopifnot(all(members$Status %in% c("member", "referent", "admin", "Presenter")))
-# check for duplicates
-stopifnot(nrow(members %>% group_by(Name) %>% filter(n() > 1)) == 0)
+# # Where are we?
+# members <- gs_key("1WyfmLfoAQUP2iRogqcOfYA9Hum7DT0BcVyTtei_6Xjw",
+#                   lookup = TRUE, visibility = "private") %>%
+#   gs_read() %>%
+#   tidyr::unite_(col = "Name", from = c("First name", "Last name"),
+#                 sep = " ", remove = TRUE) %>%
+#   mutate(
+#     Name = if_else(is.na(Website), Name,
+#                    paste0("<a href='", Website, "' target='_blank'>", Name, "</a>")),
+#     Website = NULL,
+#     Status = if_else(is.na(Status), "member", Status),
+#     infos = paste0(
+#       Name, "<br>",
+#       if_else(is.na(Institution), "", paste0("at ", Institution, "<br>"))#,
+#       # if_else(is.na(Field), "", paste0("in ", Field, "<br>")),
+#       # if_else(is.na(Keywords), "", paste0("knows ", Keywords))
+#     )
+#   )
+# 
+# # check wrong entries for status
+# stopifnot(all(members$Status %in% c("member", "referent", "admin", "Presenter")))
+# # check for duplicates
+# stopifnot(nrow(members %>% group_by(Name) %>% filter(n() > 1)) == 0)
 ```
 
 ```{r, message=FALSE}
-display map
-suppressWarnings(
-  leaflet(members, width = "100%") %>%
-    setView(lng = -102.661586, lat = 38.708717, zoom = 2) %>%
-    addTiles(options = providerTileOptions(minZoom = 2, maxZoom = 19)) %>%
-    # addAwesomeMarkers(lng = 5.767249, lat = 45.190590,
-    #                   popup = "Meeting location",
-    #                   label = "Meeting location",
-    #                   icon = makeAwesomeIcon("android-locate", library = "ion", markerColor = "red")) %>%
-    addAwesomeMarkers(popup = ~infos,
-                      label = ~lapply(infos, htmltools::HTML),
-                      options = markerOptions(riseOnHover = TRUE),
-                      clusterOptions = markerClusterOptions(iconCreateFunction=JS("function (cluster) {
-    var childCount = cluster.getChildCount();
-    if (childCount < 5) {
-      c = 'rgba(100,149,237, 1);'
-    } else {
-      c = 'rgba(65,105,225, 1);'
-    }
-    return new L.DivIcon({ html: '<div style=\"background-color:'+c+'\"><span>' + childCount + '</span></div>', className: 'marker-cluster', iconSize: new L.Point(40, 40) });
-  }")),
-                      icon = makeAwesomeIcon("person", library = "ion", markerColor = ~if_else(Status == "member", "blue", "darkblue"))) %>%
-    htmlwidgets::onRender('
-      function(el, x) {
-        var myMap = this;
-        myMap.on("click", function(e) {
-          alert("Latitude: " + e.latlng.lat + "\\nLongitude: " + e.latlng.lng)
-        })
-      }')
-)
+# # display map
+# suppressWarnings(
+#   leaflet(members, width = "100%") %>%
+#     setView(lng = -102.661586, lat = 38.708717, zoom = 2) %>%
+#     addTiles(options = providerTileOptions(minZoom = 2, maxZoom = 19)) %>%
+#     # addAwesomeMarkers(lng = 5.767249, lat = 45.190590,
+#     #                   popup = "Meeting location",
+#     #                   label = "Meeting location",
+#     #                   icon = makeAwesomeIcon("android-locate", library = "ion", markerColor = "red")) %>%
+#     addAwesomeMarkers(popup = ~infos,
+#                       label = ~lapply(infos, htmltools::HTML),
+#                       options = markerOptions(riseOnHover = TRUE),
+#                       clusterOptions = markerClusterOptions(iconCreateFunction=JS("function (cluster) {
+#     var childCount = cluster.getChildCount();
+#     if (childCount < 5) {
+#       c = 'rgba(100,149,237, 1);'
+#     } else {
+#       c = 'rgba(65,105,225, 1);'
+#     }
+#     return new L.DivIcon({ html: '<div style=\"background-color:'+c+'\"><span>' + childCount + '</span></div>', className: 'marker-cluster', iconSize: new L.Point(40, 40) });
+#   }")),
+#                       icon = makeAwesomeIcon("person", library = "ion", markerColor = ~if_else(Status == "member", "blue", "darkblue"))) %>%
+#     htmlwidgets::onRender('
+#       function(el, x) {
+#         var myMap = this;
+#         myMap.on("click", function(e) {
+#           alert("Latitude: " + e.latlng.lat + "\\nLongitude: " + e.latlng.lng)
+#         })
+#       }')
+# )
 ```
 
 ```{r}
