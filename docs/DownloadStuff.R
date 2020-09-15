@@ -11,7 +11,8 @@ library("googledrive")
 # https://docs.google.com/spreadsheets/d/1NkG331BZW_Q9PuzdhEgW5rB6vkLe0K_Dd1K3iFrAFNw/edit?usp=sharing
 drive_deauth()
 drive_auth()
-drive_download("R Workshop Detailed Schedule", type = "csv")
+drive_download("R Workshop Video Links", type = "csv", overwrite = TRUE)
+drive_download("R Workshop Detailed Schedule", type = "csv", overwrite = TRUE)
 
 
 #### Download GitHub Icons

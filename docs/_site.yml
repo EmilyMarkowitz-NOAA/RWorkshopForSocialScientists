@@ -14,7 +14,7 @@ navbar:
       href: mailto:emily.markowitz@noaa.gov                      # CHANGE HERE 
     - icon: fa-github
       href: https://github.com/emilyhmarkowitz/RWorkshopForSocialScientists         # CHANGE HERE 
-    - icon: fab fa-google-drive
+    - icon: fa-google
       href: https://drive.google.com/drive/folders/1gzMhlkt-rbpKAGaf7_F9zCOjFTtdaU6T?usp=sharing
 output:
   html_document:
