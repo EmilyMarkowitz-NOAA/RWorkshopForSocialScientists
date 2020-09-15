@@ -24,9 +24,9 @@ library("googledrive")
 
 # Agenda <- data.frame(read_csv("../Agenda.csv"))
 
-Agenda <- data.frame(read_csv("../docs/R Workshop Detailed Schedule.csv"))
-names(Agenda)<-Agenda[1,]
-Agenda<-Agenda[-1,]
+Agenda <- data.frame(read_csv("../docs/R Workshop Detailed Schedule.csv", col_names = FALSE))
+names(Agenda)<-Agenda[2,]
+Agenda<-Agenda[-c(1:2),]
 Agenda0 <- Agenda
 
 not0<-c("", "??", NA)
@@ -52,9 +52,9 @@ for (i in 1:length(aa)){
       # dd<- aa[i][[1]][ii]
       if (grepl(pattern = "https://", x = aa[i][[1]][ii], ignore.case = T)) {
         bb<-strsplit(x = aa[i][[1]][ii], split = ": ")
-        cc<-paste0("[", bb[[1]][1], "] (", bb[[1]][2], ")")
+        # cc<-paste0("[", bb[[1]][1], "] (", bb[[1]][2], ")")
         # cc<-paste0('<a href="', bb[[1]][1], '">link text</"', bb[[1]][2], '">')
-        # cc<-paste0('tags$a(href="', bb[[1]][1], '", "', bb[[1]][2], '"')
+        cc<-paste0('tags$a(href="', bb[[1]][1], '", "', bb[[1]][2], '"')
         # cc<-paste0("![{",bb[[1]][2],"}]({",bb[[1]][1],"})")
         aa[i][[1]][ii]<-cc
       }
