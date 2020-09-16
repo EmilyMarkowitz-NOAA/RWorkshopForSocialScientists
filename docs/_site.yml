@@ -5,7 +5,7 @@ navbar:
   left:
     - text: "About"
       icon: fa-briefcase
-      href: About.html  
+      href: about.html  
     - text: "Agenda"
       icon: fa-calendar
       href: sessions.html  
