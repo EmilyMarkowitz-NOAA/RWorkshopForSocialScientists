@@ -10,143 +10,11 @@ We are excited that you will be joining us for this workshop! Please fill out th
 knitr::opts_chunk$set(echo = FALSE, warning=FALSE, error = FALSE, message = FALSE)
 library(tidyverse)
 library(lubridate)
-Sys.setlocale("LC_TIME", "C")
 library(htmltools)
 ```
 
-```{r}
-PreMaterial <- data.frame(read_csv("./R Workshop Video Links.csv", col_names = FALSE))
-names(PreMaterial)<-PreMaterial[2,]
-PreMaterial<-PreMaterial[-c(1:3),]
-PreMaterial<-PreMaterial[!(is.na(PreMaterial$Topic)),]
-PreMaterial0 <- PreMaterial
-
-PreMaterial$NeedToKnow<-paste0("Importance Level: ",PreMaterial$`Importance Level`,"; 
-                                Fun-ness: ", PreMaterial$`Fun-ness`, ";
-                                Suggested For: ", PreMaterial$`Suggested for`)
-
-PreMaterial$Notes<-gsub(pattern = '"', replacement = "'", x = PreMaterial$Notes)
-PreMaterial$Notes0<-paste0('tags$li(', #paste(
-                           paste0('tags$p("', PreMaterial$NeedToKnow, '"),'), 
-                           ifelse(is.na(PreMaterial$Notes), "",
-                                  paste0('tags$p("', PreMaterial$Notes, '"),')), 
-                           paste0('tags$a(href="', PreMaterial$`Video Link`, '", "Video Link"),
-                                  '), 
-                           paste0('tags$a(href="', PreMaterial$Playlist, '", "Playlist Link")'),
-                           # collapse = ", "), 
-                           ')')
-
-
-
-PreMaterial$NeedToKnow<-""
-PreMaterial$Title<-paste0(PreMaterial$`Playlist Title`," - ", PreMaterial$Topic)
-PreMaterial$Authors<-"Aaron Mamula"
-PreMaterial<-data.frame(PreMaterial)
-rownames(PreMaterial)<-1:nrow(PreMaterial)
-```
-
-```{css}
-.schedule {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.limit {
-  width: 100%;
-  padding: 5px 0 5px 0;
-}
-
-.workshops-button {
-  padding: 0.75em 1.25em;
-  background-color: #cccccc;
-  opacity: 0.9;
-  width: auto;
-  color: black;
-  text-align: center;
-  overflow: auto;
-}
-
-.left-date {
-  width: 20%;
-  float: left;
-  text-align: left;
-}
-
-.center-title {
-  width: 60%;
-  float: left;
-  text-align: left;
-  font-size: 120%;
-}
-
-.right-authors {
-  width: 20%;
-  float: right;
-  text-align: right;
-}
-
-.workshops {
-  margin: 1em 1em 0 0;
-}
-
-.active {
-  background-color: #333333;
-  color: whitesmoke;
-}
-
-```
-
-```{js}
-function main() {
-  $('.schedule').hide();
-  $('.schedule').fadeIn(2000);
-  $('.workshops').hide();
-  $('.workshops-button').on('click', function() {
-    $(this).next().slideToggle(400);
-    $(this).toggleClass('active');
-  });
-}
- 
-$(document).ready(main);
-```
-
-## Pre-Meeting Materials
 
 ```{r}
-program1<-PreMaterial
-
-div(
-  class = "schedule",
-  apply(program1, 1, function(event) {
-    div(
-      class = "limit",
-      div(class = "workshops-button", 
-          div(class = "left-date", 
-              event[['NeedToKnow']]),
-          div(class = "center-title", 
-              # tags$i(event[['Title']])),
-              tags$b(event[['Title']])),
-          div(class = "right-authors",
-              event[['Authors']])),
-      tags$ul(class = "workshops",
-              (eval(parse(text=event[["Notes0"]])) ) )
-              # event[["Notes"]])
-    )
-  })
-)
-```
-
-<br>
-
-```{r}
-# https://googledrive.tidyverse.org/
-# https://docs.google.com/spreadsheets/d/1NkG331BZW_Q9PuzdhEgW5rB6vkLe0K_Dd1K3iFrAFNw/edit?usp=sharing
-# drive_deauth()
-# drive_auth()
-# drive_download("R Workshop Detailed Schedule", type = "csv")
-
-# Agenda <- data.frame(read_csv("../Agenda.csv"))
 
 Agenda <- data.frame(read_csv("./R Workshop Detailed Schedule.csv", col_names = FALSE))
 names(Agenda)<-Agenda[2,]
@@ -155,9 +23,8 @@ Agenda$Notes0<-Agenda$Notes
 Agenda0 <- Agenda
 
 not0<-c("", "??", NA)
-Agenda$Date<-paste0(#Agenda$Date, " (", 
+Agenda$Date<-paste0(
   Agenda$`Start Time (PT)`, "-", Agenda$`End Time (PT)`
-  #, ")"
   )
 Agenda$Title<-paste0(Agenda$`Course Segment`,
                      ifelse( ( Agenda$`Course Segment` == Agenda$Topics | 
@@ -174,9 +41,6 @@ Agenda$Authors<-paste0(ifelse(Agenda$Presenter %in% not0, "", paste0("Presenter:
                        ifelse(Agenda$`Chat/Q&A` %in% not0, "", paste0("Help: ", Agenda$`Chat/Q&A`)) ) # Help
 
 Agenda$Notes[is.na(Agenda$Notes)]<-""
-# Agenda$Notes[1]<-'tags$a(href="www.rstudio.com", "Click here!")'
-# Agenda$Notes[2]<-'<a href="www.rstudio.com">Click here!</a> '
-# Agenda$Notes[3]<-'[Click here!](www.rstudio.com)'
 
 aa<-strsplit(x = Agenda$Notes, split = "\n\n")
 for (i in 1:length(aa)){
@@ -211,27 +75,11 @@ for (i in 1:length(aa)){
 }
 
 Agenda$Notes<-unlist(aa)
-# Agenda$Notes<-gsub(pattern = "//\", )
-# Agenda$Notes<-gsub(pattern = "\\\\", replacement = "", x = Agenda$Notes)
-
 Agenda<-Agenda[,c("Date","Notes","Title","Authors")]
-
-# Agenda<-Agenda[1,]
-# Agenda0<-Agenda0[1,]
-
 program<-as_tibble(Agenda) #%>%
-  # mutate(Date = dmy(Date))
 
 
-#Come by to ask any questions you have about the course, content, or with specific questions about issues you have in your own analyses.
-
-# stopifnot(all(wday(program$Date) == 5)) # Thursdays (begin with Sundays)
-          
-# program <- program %>%
-  # arrange(Date) %>%
-  # mutate(Date = format(Date, format = "%B %d, %Y"))
 ```
-
 
 ```{css}
 .schedule {
@@ -255,17 +103,15 @@ program<-as_tibble(Agenda) #%>%
   overflow: auto;
 }
 
-# .workshops-button[data-workshops = "Tuesday, September 22, 2020"]:after {
-#   padding: 0.75em 1.25em;
-#   background-color: #cccccc;
-#   opacity: 0.9;
-#   width: auto;
-#   color: red;
-#   text-align: center;
-#   overflow: auto;
-# }
-
-
+.workshops-button {
+  padding: 0.75em 1.25em;
+  background-color: #cccccc;
+  opacity: 0.9;
+  width: auto;
+  color: black;
+  text-align: center;
+  overflow: auto;
+}
 
 .left-date {
   width: 20%;

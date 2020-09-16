@@ -6,6 +6,9 @@ navbar:
     - text: "Agenda"
       icon: fa-calendar
       href: sessions.html  
+    - text: "Pre-meet materials"
+      icon: fa-check
+      href: pre-meet.html  
     - text: "Presenters"
       icon: fa-user 
       href: members.html
