@@ -3,6 +3,9 @@ output_dir: "."
 navbar:
   title: "R Workshop for Social Scientist"    
   left:
+    - text: "About"
+      icon: fa-briefcase
+      href: About.html  
     - text: "Agenda"
       icon: fa-calendar
       href: sessions.html  
