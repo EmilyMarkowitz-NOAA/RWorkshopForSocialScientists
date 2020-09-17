@@ -1,7 +1,7 @@
 name: "R Workshop for Social Scientist"                                  # CHANGE HERE 
 output_dir: "."
 navbar:
-  title: "R Workshop for Social Scientist"    
+  title: "<p><img id=\"logo\" style=\"width: 20px;\" src=\"Noaa_logo.png\" /> R Workshop for Social Scientist </p>"    
   left:
     - text: "About"
       icon: fa-briefcase
@@ -12,9 +12,14 @@ navbar:
     - text: "Pre-meet materials"
       icon: fa-check
       href: pre-meet.html  
+    - text: "Other Resources"
+      icon: fa-plus 
+      href: otherresources.html
     - text: "Presenters"
       icon: fa-user 
       href: members.html
+    - text: ""
+      href: BestScriptingPractices.nb.html
   right:
     - icon: fa-envelope-o
       href: mailto:emily.markowitz@noaa.gov                      # CHANGE HERE 

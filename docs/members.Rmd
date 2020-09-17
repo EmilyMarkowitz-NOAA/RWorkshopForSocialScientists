@@ -1,5 +1,9 @@
 ---
 title: "Presenters"
+output:
+  html_document:
+    includes:
+      in_header: header.html
 editor_options: 
   chunk_output_type: console
 ---
@@ -56,6 +60,7 @@ for (i in 1:nrow(members)) {
   # my_repos <- gh("GET /users/emilyhmarkowitz/repos")
   # vapply(my_repos, "[[", "", "name")
 }
+members$GitHub<-members$githublink
 
 members$Website<-members$githublink
 
@@ -68,13 +73,6 @@ print0<-glue_data(.x = members, .sep = "",
 
 # `r print0 `
 
-
-```
-
-```{r}
-# display table
-datatable(select(members, c(Name, Institution, githublink)), 
-              rownames = FALSE, escape = FALSE, options = list(dom = 't'))
 ```
 
 
@@ -82,16 +80,38 @@ datatable(select(members, c(Name, Institution, githublink)),
 # m <- leaflet() %>%
 #   addTiles() %>%  # Add default OpenStreetMap map tiles
 #   addMarkers(lng=174.768, lat=-36.852, popup="The birthplace of R")
-
+library(leafpop)
 library(maps)
+membersgit<-members[!(members$github %in% ""),]
+membersnogit<-members[(members$github %in% ""),]
+
 mapStates = map("state", fill = TRUE, plot = FALSE)
 # leaflet(data = mapStates) %>% 
 leaflet() %>%
   addTiles() %>%
   # addPolygons(fillColor = topo.colors(10, alpha = NULL), stroke = FALSE) %>%
-  addMarkers(lng=members$lon, lat=members$lat, 
-             popup=paste(members$Name, " | ", members$Institution, 
-                          ifelse(members$github %in% "", "", paste0(" | GitHub: ", members$github))))
+  addMarkers(lng=membersnogit$lon, lat=membersnogit$lat, group = "points",
+             popup=paste("<b>", membersnogit$Name, "</b> 
+                         <br/> ", membersnogit$Institution, 
+                         "<br/> ", ifelse(membersnogit$github %in% "", "", 
+                                          paste0("<a href = ", membersnogit$GitHub, "> GitHub </a> ")))) %>%
+  
+  addMarkers(lng=membersgit$lon, lat=membersgit$lat, group = "withgit",
+             popup=paste("<b>", membersgit$Name, "</b> 
+                         <br/> ", membersgit$Institution, 
+                         "<br/> ", ifelse(membersgit$github %in% "", "", 
+                                          paste0("<a href = ", membersgit$GitHub, "> GitHub </a> ")))) %>%
+  
+  addPopupImages(image = membersgit$imagelink, group = "withgit", width = 300, height = 350)#width = 2*(300*2), height = 2*(350/8))
+
+# vwidth = 300, vheight = 350
 ```
 
+
+```{r}
+# display table
+members$GitHub[members$GitHub %in% "https://github.com/"]<-""
+datatable(select(members, c(Name, Institution, GitHub)), 
+              rownames = FALSE, escape = FALSE, options = list(dom = 't'))
+```
 

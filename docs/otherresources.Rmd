@@ -1,5 +1,5 @@
 ---
-title: "Pre-meet Materials"
+title: "Other Resources"
 output:
   html_document:
     includes:
@@ -154,7 +154,7 @@ $(document).ready(main);
 ```
 
 ```{r}
-counter<-1
+counter<-3
 ```
 
 

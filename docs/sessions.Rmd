@@ -1,5 +1,11 @@
 ---
 title: "Course Agenda (Pacific Time) and Lessons"
+output:
+  html_document:
+    includes:
+      in_header: header.html
+editor_options: 
+  chunk_output_type: console
 ---
 
 We are excited that you will be joining us for this workshop! Please fill out this [google form](https://docs.google.com/forms/d/e/1FAIpQLSd6yThLtJLjAICFzvOkPGoAou3aJcD-4s-7uhVFfQI3hVaoMQ/viewform?usp=sf_link) to let us know that you will be joining us. 
@@ -53,7 +59,9 @@ for (i in 1:length(aa)){
         bb<-strsplit(x = aa[i][[1]][ii], split = ": ")
         # cc<-paste0('["', bb[[1]][1], '"] (', bb[[1]][2], '")')
         # cc<-paste0('<a href="', bb[[1]][2], '">', bb[[1]][1], '</a>')
-        cc<-paste0('tags$a(href="', bb[[1]][2], '", "', bb[[1]][1], '")')
+        cc<-paste0('
+        tags$p(""),
+        tags$a(href="', bb[[1]][2], '", "', bb[[1]][1], '")')
         # cc<-paste0("![{",bb[[1]][2],"}]({",bb[[1]][1],"})")
         # aa[i][[1]][ii]<-paste0("<li>", cc, "</li>")
         aa[i][[1]][ii]<-cc#paste0('tags$li(', cc, ')')
