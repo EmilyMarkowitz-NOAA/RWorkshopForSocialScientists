@@ -110,6 +110,7 @@ leaflet() %>%
 
 ```{r}
 # display table
+members$GitHub[members$GitHub %in% "https://github.com/"]<-""
 datatable(select(members, c(Name, Institution, GitHub)), 
               rownames = FALSE, escape = FALSE, options = list(dom = 't'))
 ```

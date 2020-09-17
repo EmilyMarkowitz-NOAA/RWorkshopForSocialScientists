@@ -1,35 +1,37 @@
 ,,R Workshop for Social Scientists Schedule,,,,,,
 Date,Start Time (PT),End Time (PT),Course Segment,Topics,Presenter,Host,Chat/Q&A,Notes
 "Tuesday, September 22, 2020",8:00 AM,8:50:AM,Help Desk,Help Desk,,Aaron Mamula & Emily Markowitz,,"An informal opprotunity to come by to ask any questions you have about the course, content, or with specific questions about issues you have in your own analyses."
-"Tuesday, September 22, 2020",9:00 AM,9:50:AM,Intro to Data Analysis in R,Importing Data,Aaron Mamula,Emily Markowitz,Erin Steiner,"Core illustrations include importing data from spreadsheet type applications, importing STATA .dta files and importing SAS data files
+"Tuesday, September 22, 2020",9:00 AM,9:50:AM,Intro to Data Analysis in R,Importing Data,Aaron Mamula,Emily Markowitz,Erin Steiner,"Core illustrations include importing data from spreadsheet type applications, importing STATA .dta files and importing SAS data files. 
 
 GitHub Repository: https://github.com/aaronmams/rHD-Data-Import-Export"
 "Tuesday, September 22, 2020",10:00 AM,10:50:AM,Intro to Data Analysis in R,Data Wrangling,Aaron Mamula,Emily Markowitz,Erin Steiner,"Introduction to vectors, lists, and data frames. Introduction to the dplyr package for tidy data organization
 
 GitHub Repository: https://github.com/aaronmams/rHD-Data-Wrangling"
-"Tuesday, September 22, 2020",11:00 AM,11:50:AM,Intro to Data Analysis in R,Data Visualization,Aaron Mamula,Emily Markowitz,Allen Chen,"Illustrating different types of plots with the ggplot2 package
+"Tuesday, September 22, 2020",11:00 AM,11:50:AM,Intro to Data Analysis in R,Data Visualization,Aaron Mamula,Emily Markowitz,Allen Chen,"Illustrating different types of plots with the ggplot2 package. 
 
 GitHub Repository: https://github.com/aaronmams/rHD-Data-Visualization"
-"Tuesday, September 22, 2020",12:00 PM,1:00:PM,R Happy Hour,,,"Aaron Mamula, Emily Markowitz",,another informal opportunity to follow-up on the lessons of the day or raise other issues/topics of interest
+"Tuesday, September 22, 2020",12:00 PM,1:00:PM,R Happy Hour,,,"Aaron Mamula, Emily Markowitz",,Another informal opportunity to follow-up on the lessons of the day or raise other issues/topics of interest. 
 "Wednesday, September 23, 2020",8:00 AM,8:50:AM,Help Desk,Help Desk,Erin Steiner,Aaron Mamula & Emily Markowitz,,"An informal opprotunity to come by to ask any questions you have about the course, content, or with specific questions about issues you have in your own analyses."
-"Wednesday, September 23, 2020",9:00 AM,9:30:AM,Intro to Data Analysis in R,Databases,Aaron Mamula,Emily Markowitz,Erin Steiner,"Minimal Working Example (MWE) of a database query in R
+"Wednesday, September 23, 2020",9:00 AM,9:30:AM,Intro to Data Analysis in R,Databases,Aaron Mamula,Emily Markowitz,Erin Steiner,"Minimal Working Example (MWE) of a database query in R. 
 
 GitHub Repository: https://github.com/aaronmams/rHD-Data-Import-Export "
-"Wednesday, September 23, 2020",9:30 AM,10:00:AM,Intro to Data Analysis in R,Text Data,Aaron Mamula,Emily Markowitz,Erin Steiner,"MWE of working with .pdfs and text/character data
+"Wednesday, September 23, 2020",9:30 AM,10:00:AM,Intro to Data Analysis in R,Text Data,Aaron Mamula,Emily Markowitz,Erin Steiner,"MWE of working with .pdfs and text/character data. 
 
 GitHub Repository: https://github.com/aaronmams/rHD-Vignette-Text-Mining"
 "Wednesday, September 23, 2020",10:00 AM,10:30:AM,Intro to Data Analysis in R,Maps,Aaron Mamula,Emily Markowitz,,"MWE of working with spatial data and making simple maps in R
 
-GitHub Repository:https://github.com/aaronmams/rHD-Data-Visualization "
-"Wednesday, September 23, 2020",10:40 AM,12:00:PM,Intro to Data Analysis in R,APIs,Aaron Mamula; Rob Ames; Ben Fissel,Emily Markowitz,Aaron Mamula,"Introduction to data import in R using APis with examples from the Pacific Fisheries Information Network, NMFS S&T Seafood Trade API, and U.S. Census Bureau API"
-"Wednesday, September 23, 2020",12:00 PM,1:00:PM,R Happy Hour,Working with APIs,,Rob Ames & Ben Fissel,,This is a chance to follow-up with Rob and Ben on their API talks
+GitHub Repository: https://github.com/aaronmams/rHD-Data-Visualization "
+"Wednesday, September 23, 2020",10:40 AM,12:00:PM,Intro to Data Analysis in R,APIs,Aaron Mamula; Rob Ames; Ben Fissel,Emily Markowitz,Aaron Mamula,"Introduction to data import in R using APis with examples from the Pacific Fisheries Information Network, NMFS S&T Seafood Trade API, and U.S. Census Bureau API. "
+"Wednesday, September 23, 2020",12:00 PM,1:00:PM,R Happy Hour,Working with APIs,,Rob Ames & Ben Fissel,,This is a chance to follow-up with Rob and Ben on their API talks. 
 "Wednesday, September 23, 2020",12:00 PM,1:00:PM,R Happy Hour,Help Desk/Troubleshooting,,Emily Markowitz,,
 "Wednesday, September 23, 2020",12:00 PM,1:00:PM,R Happy Hour,Help Desk/Show and Tell/R Shiny,Ashley Vizek,Aaron Mamula,Erin Steiner,
 "Thursday, September 24, 2020",8:00 AM,8:50:AM,Help Desk,Help Desk,Erin Steiner,Aaron Mamula & Emily Markowitz,Ashley Vizek,"An informal opprotunity to come by to ask any questions you have about the course, content, or with specific questions about issues you have in your own analyses."
-"Thursday, September 24, 2020",9:00 AM,9:50:AM,Intermediate/Advanced Topics,"R Workflows, Best Practices, Writing Elegant Code",Emily Markowitz,Aaron Mamula,Erin Steiner,"Learn about how to write and prepare a script. 
+"Thursday, September 24, 2020",9:00 AM,9:50:AM,Intermediate/Advanced Topics,"R Workflows, Best Practices, Writing Elegant Code",Emily Markowitz,Aaron Mamula,Erin Steiner,"Learn about how to write and prepare a script by 1. conforming to a predictable script structure, 2. annotation, 3. never repeating code, 4. naming files with predictable and helpful names, 5. predictable folder structure, 6. saving scripts in an “R Project.” 
 
-GitHub Notebook: https://raw.githubusercontent.com/emilyhmarkowitz/BestScriptingPractices/master/rscripts/BestScriptingPractices.nb.html"
+HTML Notebook: https://emilyhmarkowitz.github.io/RWorkshopForSocialScientists/BestScriptingPractices.nb.html
+
+GitHub Repository BestScriptingPractices: https://github.com/emilyhmarkowitz/BestScriptingPractices"
 "Thursday, September 24, 2020",10:00 AM,10:50:AM,Intermediate/Advanced Topics,R Markdown,Geret Depiper,Emily Markowitz,Aaron Mamula,
 "Thursday, September 24, 2020",11:00 AM,11:50:AM,Intermediate/Advanced Topics,Functional Programming & BioEconomics,Allen Chen,Emily Markowitz,Aaron Mamula,
 "Thursday, September 24, 2020",12:00 PM,12:30:PM,Course Wrap-Up,Course Wrap-Up,Aaron Mamula,Emily Markowitz,,
-"Thursday, September 24, 2020",12:30 PM,1:00:PM,R Happy Hour,Building your R Community,,Aaron Mamula & Emily Markowitz,,Some advice and discussion on building R discussion groups that last
+"Thursday, September 24, 2020",12:30 PM,1:00:PM,R Happy Hour,Building your R Community,,Aaron Mamula & Emily Markowitz,,Some advice and discussion on building R discussion groups that last. 

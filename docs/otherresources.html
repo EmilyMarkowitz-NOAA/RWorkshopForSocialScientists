@@ -11,7 +11,7 @@
 
 
 
-<title>About</title>
+<title>Pre-meet Review Materials</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -366,16 +366,269 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">About</h1>
+<h1 class="title toc-ignore">Pre-meet Review Materials</h1>
 
 </div>
 
 
-<div id="r-workshop-for-the-nmfs-economics-and-human-dimensions-program" class="section level2">
-<h2>R Workshop for the NMFS Economics and Human Dimensions Program</h2>
-<p>Some time ago, in preparation for the NMFS Social Science/Human Dimensions meeting, I was part of a group that was asked to prepare content for a possible “R for Social Scientists” workshop. The idea was to offer this workshop at the NMFS Social Science/Human Dimensions meeting. Although the in-person meeting has been canceled, our group has continued developing the content for the originally proposed R workshop. That content is available on GitHub for anyone to enjoy and will also form the basis for the virtual “R for Social Scientists” workshop which will take place via WebEx from Tuesday, September 22nd - Thursday, September 24th from 9 am - 12 :00pm PST(Pacific Time)/12 pm - 3 pm EST.</p>
-<p>The basic condition I wanted to satisfy in developing this course was that every particpant be able to find at least one helpful/useful R nugget somewhere in this mix (the “nobody leaves empty-handed principle”). In hindsight, I heinously underestimated how difficult this would be. I sincerely hope all of you will find some value in the material assembled here… if you don’t, just know that I tried.</p>
-<p>–aaron</p>
+<p>We are excited that you will be joining us for this workshop! Please fill out this <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6yThLtJLjAICFzvOkPGoAou3aJcD-4s-7uhVFfQI3hVaoMQ/viewform?usp=sf_link">google form</a> to let us know that you will be joining us.</p>
+<p><em>Please click on the title to see the session description</em></p>
+<style type="text/css">
+.schedule {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.limit {
+  width: 100%;
+  padding: 5px 0 5px 0;
+}
+
+.workshops-button {
+  padding: 0.75em 1.25em;
+  background-color: #cccccc;
+  opacity: 0.9;
+  width: auto;
+  color: black;
+  text-align: center;
+  overflow: auto;
+}
+
+.workshops-button {
+  padding: 0.75em 1.25em;
+  background-color: #cccccc;
+  opacity: 0.9;
+  width: auto;
+  color: black;
+  text-align: center;
+  overflow: auto;
+}
+
+.left-date {
+  width: 20%;
+  float: left;
+  text-align: left;
+}
+
+.center-title {
+  width: 60%;
+  float: left;
+  text-align: left;
+  font-size: 120%;
+}
+
+.right-authors {
+  width: 20%;
+  float: right;
+  text-align: right;
+}
+
+.workshops {
+  margin: 1em 1em 0 0;
+}
+
+.active {
+  background-color: #333333;
+  color: whitesmoke;
+}
+
+</style>
+<script type="text/javascript">
+function main() {
+  $('.schedule').hide();
+  $('.schedule').fadeIn(2000);
+  $('.workshops').hide();
+  $('.workshops-button').on('click', function() {
+    $(this).next().slideToggle(400);
+    $(this).toggleClass('active');
+  });
+}
+ 
+$(document).ready(main);
+</script>
+<div id="text-mining" class="section level2">
+<h2>Text Mining</h2>
+<div class="schedule">
+<div class="limit">
+<div class="workshops-button">
+<div class="left-date">Low</div>
+<div class="center-title">
+<b>Scaping Twitter Data</b>
+</div>
+<div class="right-authors">Aaron Mamula</div>
+</div>
+<ul class="workshops">
+<li>
+<p>Fun-ness: High</p>
+<p>Suggested For: anyone interested in playing with text data from Twitter</p>
+<p>It's kinda hard to set up fully reproducable examples of this sort of this because you will need your own API access credentials which involve logging in to Twitter and creating a developer account....but I've done my best to walk through what I see as the biggest hurdles to Twitter Scraping in R.</p>
+<a href="https://www.youtube.com/watch?v=uFr4K8VXucU&amp;list=PLJI4SWhcIx2gMdB5yT2FNBbr7b3-sAHvu&amp;index=9">Video Link</a>
+<p></p>
+<a href="https://www.youtube.com/watch?v=oGrBuTHNKVM&amp;list=PLJI4SWhcIx2gMdB5yT2FNBbr7b3-sAHvu">Playlist Link</a>
+</li>
+</ul>
+</div>
+<div class="limit">
+<div class="workshops-button">
+<div class="left-date">Low</div>
+<div class="center-title">
+<b>Dealing with text data in pdf files</b>
+</div>
+<div class="right-authors">Aaron Mamula</div>
+</div>
+<ul class="workshops">
+<li>
+<p>Fun-ness: Medium-High</p>
+<p>Suggested For: anyone interested in dealing with text data</p>
+<p>Part 1 in a pretty long 7 part series on breaking down text-heavy data from Supreme Court Opinions stored in pdf files</p>
+<a href="https://www.youtube.com/channel/UCN3hKnsoZy6Pe4366yb3URw">Video Link</a>
+<p></p>
+<a href="https://www.youtube.com/watch?v=oGrBuTHNKVM&amp;list=PLJI4SWhcIx2gMdB5yT2FNBbr7b3-sAHvu">Playlist Link</a>
+</li>
+</ul>
+</div>
+<div class="limit">
+<div class="workshops-button">
+<div class="left-date">Low</div>
+<div class="center-title">
+<b>Dealing with text data in pdf files</b>
+</div>
+<div class="right-authors">Aaron Mamula</div>
+</div>
+<ul class="workshops">
+<li>
+<p>Fun-ness: Medium-High</p>
+<p>Suggested For: anyone interested in dealing with text data</p>
+<p>Part 2</p>
+<a href="https://www.youtube.com/watch?v=0EQk2W7MsB8&amp;list=PLJI4SWhcIx2gMdB5yT2FNBbr7b3-sAHvu&amp;index=3">Video Link</a>
+<p></p>
+<a href="https://www.youtube.com/watch?v=oGrBuTHNKVM&amp;list=PLJI4SWhcIx2gMdB5yT2FNBbr7b3-sAHvu">Playlist Link</a>
+</li>
+</ul>
+</div>
+<div class="limit">
+<div class="workshops-button">
+<div class="left-date">Low</div>
+<div class="center-title">
+<b>Dealing with text data in pdf files</b>
+</div>
+<div class="right-authors">Aaron Mamula</div>
+</div>
+<ul class="workshops">
+<li>
+<p>Fun-ness: Medium-High</p>
+<p>Suggested For: anyone interested in dealing with text data</p>
+<p>Part 3</p>
+<a href="https://www.youtube.com/watch?v=7-LKEZPB_D4&amp;list=PLJI4SWhcIx2gMdB5yT2FNBbr7b3-sAHvu&amp;index=4">Video Link</a>
+<p></p>
+<a href="https://www.youtube.com/watch?v=oGrBuTHNKVM&amp;list=PLJI4SWhcIx2gMdB5yT2FNBbr7b3-sAHvu">Playlist Link</a>
+</li>
+</ul>
+</div>
+<div class="limit">
+<div class="workshops-button">
+<div class="left-date">Low</div>
+<div class="center-title">
+<b>Dealing with text data in pdf files</b>
+</div>
+<div class="right-authors">Aaron Mamula</div>
+</div>
+<ul class="workshops">
+<li>
+<p>Fun-ness: Medium-High</p>
+<p>Suggested For: anyone interested in dealing with text data</p>
+<p>Part 4</p>
+<a href="https://www.youtube.com/watch?v=iezZllUZASE&amp;list=PLJI4SWhcIx2gMdB5yT2FNBbr7b3-sAHvu&amp;index=5">Video Link</a>
+<p></p>
+<a href="https://www.youtube.com/watch?v=oGrBuTHNKVM&amp;list=PLJI4SWhcIx2gMdB5yT2FNBbr7b3-sAHvu">Playlist Link</a>
+</li>
+</ul>
+</div>
+<div class="limit">
+<div class="workshops-button">
+<div class="left-date">Low</div>
+<div class="center-title">
+<b>Dealing with text data in pdf files</b>
+</div>
+<div class="right-authors">Aaron Mamula</div>
+</div>
+<ul class="workshops">
+<li>
+<p>Fun-ness: Medium-High</p>
+<p>Suggested For: anyone interested in dealing with text data</p>
+<p>Part 5</p>
+<a href="https://www.youtube.com/watch?v=Fhjf8Z_dh1o&amp;list=PLJI4SWhcIx2gMdB5yT2FNBbr7b3-sAHvu&amp;index=6">Video Link</a>
+<p></p>
+<a href="https://www.youtube.com/watch?v=oGrBuTHNKVM&amp;list=PLJI4SWhcIx2gMdB5yT2FNBbr7b3-sAHvu">Playlist Link</a>
+</li>
+</ul>
+</div>
+<div class="limit">
+<div class="workshops-button">
+<div class="left-date">Low</div>
+<div class="center-title">
+<b>Dealing with text data in pdf files</b>
+</div>
+<div class="right-authors">Aaron Mamula</div>
+</div>
+<ul class="workshops">
+<li>
+<p>Fun-ness: Medium-High</p>
+<p>Suggested For: anyone interested in dealing with text data</p>
+<p>Part 6</p>
+<a href="https://www.youtube.com/watch?v=nc2pYyHE9QI&amp;list=PLJI4SWhcIx2gMdB5yT2FNBbr7b3-sAHvu&amp;index=7">Video Link</a>
+<p></p>
+<a href="https://www.youtube.com/watch?v=oGrBuTHNKVM&amp;list=PLJI4SWhcIx2gMdB5yT2FNBbr7b3-sAHvu">Playlist Link</a>
+</li>
+</ul>
+</div>
+<div class="limit">
+<div class="workshops-button">
+<div class="left-date">Low</div>
+<div class="center-title">
+<b>Dealing with text data in pdf files</b>
+</div>
+<div class="right-authors">Aaron Mamula</div>
+</div>
+<ul class="workshops">
+<li>
+<p>Fun-ness: Medium-High</p>
+<p>Suggested For: anyone interested in dealing with text data</p>
+<p>Part 7</p>
+<a href="https://www.youtube.com/watch?v=HfeZh1GVJmY&amp;list=PLJI4SWhcIx2gMdB5yT2FNBbr7b3-sAHvu&amp;index=8">Video Link</a>
+<p></p>
+<a href="https://www.youtube.com/watch?v=oGrBuTHNKVM&amp;list=PLJI4SWhcIx2gMdB5yT2FNBbr7b3-sAHvu">Playlist Link</a>
+</li>
+</ul>
+</div>
+</div>
+<p><br></p>
+</div>
+<div id="data-import" class="section level2">
+<h2>Data Import</h2>
+<div class="schedule">
+<div class="limit">
+<div class="workshops-button">
+<div class="left-date">Low</div>
+<div class="center-title">
+<b>Connecting to AWS Databases</b>
+</div>
+<div class="right-authors">Aaron Mamula</div>
+</div>
+<ul class="workshops">
+<li>
+<p>Fun-ness: High</p>
+<p>Suggested For: Anyone</p>
+<p>I spun up a MySQL database in an Amazon cloud. In this video I walk through how to connect to this database using R and import data to an R workspace from this remote database</p>
+<a href="https://youtu.be/y-Nj0SuJeLw">Video Link</a>
+<p></p>
+<a href="https://www.youtube.com/playlist?list=PLJI4SWhcIx2i3Tf9XWcetC_YtsMG1gcoM">Playlist Link</a>
+</li>
+</ul>
+</div>
+</div>
+<p><br></p>
 </div>
 
 

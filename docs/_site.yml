@@ -12,6 +12,9 @@ navbar:
     - text: "Pre-meet materials"
       icon: fa-check
       href: pre-meet.html  
+    - text: "Other Resources"
+      icon: fa-plus 
+      href: otherresources.html
     - text: "Presenters"
       icon: fa-user 
       href: members.html
