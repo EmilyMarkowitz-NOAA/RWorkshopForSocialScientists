@@ -1,5 +1,5 @@
 ---
-title: "Pre-meet Review Materials"
+title: "Pre-meet Materials"
 output:
   html_document:
     includes:
