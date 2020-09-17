@@ -1,5 +1,9 @@
 ---
 title: "About"
+output:
+  html_document:
+    includes:
+      in_header: header.html
 editor_options: 
   chunk_output_type: console
 ---

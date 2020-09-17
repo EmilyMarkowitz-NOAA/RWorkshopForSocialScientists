@@ -1,5 +1,9 @@
 ---
 title: "Presenters"
+output:
+  html_document:
+    includes:
+      in_header: header.html
 editor_options: 
   chunk_output_type: console
 ---
@@ -56,6 +60,7 @@ for (i in 1:nrow(members)) {
   # my_repos <- gh("GET /users/emilyhmarkowitz/repos")
   # vapply(my_repos, "[[", "", "name")
 }
+members$GitHub<-members$githublink
 
 members$Website<-members$githublink
 
@@ -68,13 +73,6 @@ print0<-glue_data(.x = members, .sep = "",
 
 # `r print0 `
 
-```
-
-```{r}
-# display table
-members$GitHub<-members$githublink
-datatable(select(members, c(Name, Institution, githublink)), 
-              rownames = FALSE, escape = FALSE, options = list(dom = 't'))
 ```
 
 
@@ -104,9 +102,15 @@ leaflet() %>%
                          "<br/> ", ifelse(membersgit$github %in% "", "", 
                                           paste0("<a href = ", membersgit$GitHub, "> GitHub </a> ")))) %>%
   
-  addPopupImages(image = membersgit$imagelink, group = "withgit", width = 300*4, height = 350/4)
+  addPopupImages(image = membersgit$imagelink, group = "withgit", width = 2*(300*4), height = 2*(350/4))
 
 # vwidth = 300, vheight = 350
 ```
 
+
+```{r}
+# display table
+datatable(select(members, c(Name, Institution, GitHub)), 
+              rownames = FALSE, escape = FALSE, options = list(dom = 't'))
+```
 

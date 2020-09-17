@@ -1,5 +1,11 @@
 ---
 title: "Course Agenda (Pacific Time) and Lessons"
+output:
+  html_document:
+    includes:
+      in_header: header.html
+editor_options: 
+  chunk_output_type: console
 ---
 
 We are excited that you will be joining us for this workshop! Please fill out this [google form](https://docs.google.com/forms/d/e/1FAIpQLSd6yThLtJLjAICFzvOkPGoAou3aJcD-4s-7uhVFfQI3hVaoMQ/viewform?usp=sf_link) to let us know that you will be joining us. 
