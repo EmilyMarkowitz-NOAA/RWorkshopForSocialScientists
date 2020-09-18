@@ -65,9 +65,11 @@ PreMaterial$Notes0<-paste0('tags$li(
                                              paste0('
                                              tags$p("', PreMaterial$Notes, '"),
                                              ')),
-                            'tags$a(href="', PreMaterial$`Video Link`, '", "Video Link"),
-                            tags$p(""),
-                            tags$a(href="', PreMaterial$Playlist, '", "Playlist Link"))')
+                            'tags$a(href="', PreMaterial$`Video Link`, '", "Video Link"))')
+
+# ,
+#                             tags$p(""),
+#                             tags$a(href="', PreMaterial$Playlist, '", "Playlist Link"))
 
 # PreMaterial$NeedToKnow<-""
 PreMaterial$Title<-#paste0(PreMaterial$`Playlist Title`," - ", 
@@ -158,7 +160,8 @@ counter<-1
 ```
 
 
-## `r unique(PreMaterial$Playlist.Title)[counter] `
+##  `r unique(PreMaterial$Playlist.Title)[counter]` 
+[Playlist](` r unique(PreMaterial$Playlist)[counter] `)
 
 ```{r}
 program1<-PreMaterial[PreMaterial$Playlist.Title %in% unique(PreMaterial$Playlist.Title)[counter],]
@@ -189,8 +192,8 @@ counter<-counter + 1
 
 <br>
 
-
-## `r unique(PreMaterial$Playlist.Title)[counter] `
+##  `r unique(PreMaterial$Playlist.Title)[counter]` 
+[Playlist](` r unique(PreMaterial$Playlist)[counter] `)
 
 ```{r}
 program1<-PreMaterial[PreMaterial$Playlist.Title %in% unique(PreMaterial$Playlist.Title)[counter],]

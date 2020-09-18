@@ -9,7 +9,7 @@ editor_options:
 ---
 
 ```{r, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, warning=FALSE, error = FALSE, message = FALSE)
+knitr::opts_chunk$set(echo = FALSE, warning=FALSE, error = FALSE, message = FALSE, fig.width=6, fig.height=4, fig.align = "center")
 
 library(dplyr)
 # devtools::install_github("privefl/googlesheets")
@@ -19,10 +19,9 @@ library(leaflet)
 library(DT)
 ```
 
-```{r, include=FALSE, fig.width=25}
+```{r, include=FALSE}
 # install.packages("gh")
 # library(gh)
-
 
 members<-data.frame("Name" = c("Aaron Mamula", "Emily Markowitz", "Erin Steiner", 
                                "Rob Ames", "Ben Fissel", "Geret Depiper", 
@@ -76,6 +75,15 @@ print0<-glue_data(.x = members, .sep = "",
 ```
 
 
+```{css}
+<style>
+.leaflet-popup-content > img {
+    max-width: unset;
+    max-height: unset;
+}
+</style>
+```
+
 ```{r}
 # m <- leaflet() %>%
 #   addTiles() %>%  # Add default OpenStreetMap map tiles
@@ -102,9 +110,8 @@ leaflet() %>%
                          "<br/> ", ifelse(membersgit$github %in% "", "", 
                                           paste0("<a href = ", membersgit$GitHub, "> GitHub </a> ")))) %>%
   
-  addPopupImages(image = membersgit$imagelink, group = "withgit", width = 300, height = 350)#width = 2*(300*2), height = 2*(350/8))
-
-# vwidth = 300, vheight = 350
+  addPopupImages(image = membersgit$imagelink, group = "withgit")#, #width = 300*12, height = 350/2)# width = 4*(300*2), height = 2*(350/8))
+                 # width = 300*12, height = 350)
 ```
 
 
