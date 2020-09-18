@@ -76,9 +76,9 @@ print0<-glue_data(.x = membersgit, .sep = "", '![{githublink}]({imagelink})')
 
 ```{r}
 # display table
-members$GitHub[members$GitHub %in% "https://github.com/"]<-""
-datatable(select(members, c(Name, Institution, GitHub)), 
-              rownames = FALSE, escape = FALSE, options = list(dom = 't'))
+# members$GitHub[members$GitHub %in% "https://github.com/"]<-""
+# datatable(select(members, c(Name, Institution, GitHub)), 
+#               rownames = FALSE, escape = FALSE, options = list(dom = 't'))
 ```
 
 ```{css}
