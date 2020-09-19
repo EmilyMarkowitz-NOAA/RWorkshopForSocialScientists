@@ -20,29 +20,37 @@ library(htmltools)
 ```
 
 ```{r}
-PreMaterial <- data.frame(read_csv("./R Workshop Video Links.csv", col_names = FALSE))
-names(PreMaterial)<-PreMaterial[2,]
-PreMaterial<-PreMaterial[-c(1:3),]
-PreMaterial<-PreMaterial[!(is.na(PreMaterial$Topic)),]
-PreMaterial0 <- PreMaterial
+VideoLessons <- data.frame(read_csv("./R Workshop Video Links.csv", col_names = FALSE))
+names(VideoLessons)<-VideoLessons[2,]
+VideoLessons<-VideoLessons[-c(1:3),]
+VideoLessons<-VideoLessons[!(is.na(VideoLessons$Topic)),]
+VideoLessons0 <- VideoLessons
+for (i in 1:length(unique(VideoLessons$Topic))){
+  if (sum(VideoLessons$Topic %in% unique(VideoLessons$Topic)[i])>1) {
+    VideoLessons$Topic[VideoLessons$Topic %in% unique(VideoLessons$Topic)[i]]<-
+      paste0(VideoLessons$Topic[VideoLessons$Topic %in% 
+                                  unique(VideoLessons$Topic)[i]], 
+             " (Part ", 1:sum(VideoLessons$Topic %in% unique(VideoLessons$Topic)[i]), ")")
+  }
+}
 
-PreMaterial$NeedToKnow<-c(paste0("Importance Level: ",PreMaterial$`Importance Level`[1]), PreMaterial$`Importance Level`[-1])
+VideoLessons$NeedToKnow<-c(paste0("Importance Level: ",VideoLessons$`Importance Level`[1]), VideoLessons$`Importance Level`[-1])
 
-PreMaterial$Notes<-gsub(pattern = '"', replacement = "'", x = PreMaterial$Notes)
+VideoLessons$Notes<-gsub(pattern = '"', replacement = "'", x = VideoLessons$Notes)
 
-PreMaterial$Notes0<-paste0('tags$li(
-                            tags$p("Fun-ness: ', PreMaterial$`Fun-ness`, '"),
-                            tags$p("Suggested For: ', PreMaterial$`Suggested for`, '"),',
-                            ifelse(is.na(PreMaterial$Notes), "",
+VideoLessons$Notes0<-paste0('tags$li(
+                            tags$p("Fun-ness: ', VideoLessons$`Fun-ness`, '"),
+                            tags$p("Suggested For: ', VideoLessons$`Suggested for`, '"),',
+                            ifelse(is.na(VideoLessons$Notes), "",
                                              paste0('
-                                             tags$p("', PreMaterial$Notes, '"),
+                                             tags$p("', VideoLessons$Notes, '"),
                                              ')),
-                            'tags$a(href="', PreMaterial$`Video Link`, '", "Video Link"))')
+                            'tags$a(href="', VideoLessons$`Video Link`, '", "Video Link"))')
 
-PreMaterial$Title<-(PreMaterial$Topic)
-PreMaterial$Authors<-"Aaron Mamula"
-PreMaterial<-data.frame(PreMaterial)
-rownames(PreMaterial)<-1:nrow(PreMaterial)
+VideoLessons$Title<-(VideoLessons$Topic)
+VideoLessons$Authors<-"Aaron Mamula"
+VideoLessons<-data.frame(VideoLessons)
+rownames(VideoLessons)<-1:nrow(VideoLessons)
 ```
 
 ```{css}
@@ -126,15 +134,15 @@ counter<-3
 ```
 
 
-##  `r unique(PreMaterial$Playlist.Title)[counter]` 
-[Playlist](` r unique(PreMaterial$Playlist)[counter] `)
+##  `r unique(VideoLessons$Playlist.Title)[counter]` 
+[Playlist](` r unique(VideoLessons$Playlist)[counter] `)
 
 
 ```{r}
 
 
 
-program1<-PreMaterial[PreMaterial$Playlist.Title %in% unique(PreMaterial$Playlist.Title)[counter],]
+program1<-VideoLessons[VideoLessons$Playlist.Title %in% unique(VideoLessons$Playlist.Title)[counter],]
 
 div(
   class = "schedule",
@@ -163,11 +171,11 @@ counter<-counter + 1
 <br>
 
 
-##  `r unique(PreMaterial$Playlist.Title)[counter]` 
-[Playlist](` r unique(PreMaterial$Playlist)[counter] `)
+##  `r unique(VideoLessons$Playlist.Title)[counter]` 
+[Playlist](` r unique(VideoLessons$Playlist)[counter] `)
 
 ```{r}
-program1<-PreMaterial[PreMaterial$Playlist.Title %in% unique(PreMaterial$Playlist.Title)[counter],]
+program1<-VideoLessons[VideoLessons$Playlist.Title %in% unique(VideoLessons$Playlist.Title)[counter],]
 
 div(
   class = "schedule",
@@ -196,11 +204,11 @@ counter<-counter + 1
 <br>
 
 
-##  `r unique(PreMaterial$Playlist.Title)[counter]` 
-[Playlist](` r unique(PreMaterial$Playlist)[counter] `)
+##  `r unique(VideoLessons$Playlist.Title)[counter]` 
+[Playlist](` r unique(VideoLessons$Playlist)[counter] `)
 
 ```{r}
-program1<-PreMaterial[PreMaterial$Playlist.Title %in% unique(PreMaterial$Playlist.Title)[counter],]
+program1<-VideoLessons[VideoLessons$Playlist.Title %in% unique(VideoLessons$Playlist.Title)[counter],]
 
 div(
   class = "schedule",
