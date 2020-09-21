@@ -2,9 +2,6 @@
 
 #Vinettes
 
-download.file(url = "https://raw.githubusercontent.com/emilyhmarkowitz/BestScriptingPractices/master/rscripts/BestScriptingPractices.nb.html", destfile = "./docs/BestScriptingPractices.nb.html")
-
-
 library("googledrive")
 
 # https://googledrive.tidyverse.org/
