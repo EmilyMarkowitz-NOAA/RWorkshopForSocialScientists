@@ -20,3 +20,4 @@ Low,Medium-High,Dealing with text data in pdf files,Text Mining,https://www.yout
 Low,Medium-High,Dealing with text data in pdf files,Text Mining,https://www.youtube.com/watch?v=oGrBuTHNKVM&list=PLJI4SWhcIx2gMdB5yT2FNBbr7b3-sAHvu,https://www.youtube.com/watch?v=HfeZh1GVJmY&list=PLJI4SWhcIx2gMdB5yT2FNBbr7b3-sAHvu&index=8,anyone interested in dealing with text data,Part 7
 ,,,,,,,
 Low,High,Connecting to AWS Databases,Data Import,https://www.youtube.com/playlist?list=PLJI4SWhcIx2i3Tf9XWcetC_YtsMG1gcoM,https://youtu.be/y-Nj0SuJeLw,Anyone,I spun up a MySQL database in an Amazon cloud. In this video I walk through how to connect to this database using R and import data to an R workspace from this remote database
+Low,High,Intro to APIs with R,Data Import,https://www.youtube.com/playlist?list=PLJI4SWhcIx2i3Tf9XWcetC_YtsMG1gcoM,https://youtu.be/On-vVvyHKaA,Anyone,Very simple example of how I use the Census Bureau's ACS API to get demographic data
