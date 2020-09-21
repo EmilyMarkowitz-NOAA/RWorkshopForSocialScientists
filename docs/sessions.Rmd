@@ -10,6 +10,15 @@ editor_options:
 
 We are excited that you will be joining us for this workshop! Please fill out this [google form](https://docs.google.com/forms/d/e/1FAIpQLSd6yThLtJLjAICFzvOkPGoAou3aJcD-4s-7uhVFfQI3hVaoMQ/viewform?usp=sf_link) to let us know that you will be joining us. 
 
+[Webex Meeting Link](https://noaanmfs-meets.webex.com/noaanmfs-meets/j.php?MTID=m9c34bee8fb97a5fc27733d7503fec446)
+
+Password: noaa
+
++1-415-527-5035 US Toll
+
+Access code: 199 398 5429  
+
+
 *Please click on the title to see the session description*
 
 ```{r setup, include=FALSE}
