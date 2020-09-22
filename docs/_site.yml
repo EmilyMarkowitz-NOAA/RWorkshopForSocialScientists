@@ -18,6 +18,9 @@ navbar:
     - text: "Presenters"
       icon: fa-user 
       href: members.html
+    - text: "Discussion"
+      icon: fa-question 
+      href: discussion.html
     - text: ""
       href: les_BestScriptingPractices.nb.html
     - text: ""

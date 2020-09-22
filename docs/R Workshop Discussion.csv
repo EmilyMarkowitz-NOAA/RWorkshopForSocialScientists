@@ -1,0 +1,22 @@
+,R Workshop for Social Scientists Discussion,
+Date,Topic,Notes
+"Tuesday, September 22, 2020","Is there any difference in R between ' and ""?","You can use them interchangeably, but it can be useful if you have a conjunction or some other text that uses ' or "" (e.g., ""can't"" or 'as I quote ""blah"" '). If you have both ' and "" in your text, then you need to use a regex format, which is a whole other can of beans. 
+
+To learn more about regex: https://regexr.com/"
+"Tuesday, September 22, 2020",So are your data all is csv or excel on a desktop? Can you also pull datasets from a server? Does that require using github? ,Nope! You can load and work with almost all kinds of data!
+"Tuesday, September 22, 2020","What is the difference between ""="" and ""<-""?","the use of '=' as an assignment operator dates back to Fortran and other early generation programming languages.  Given that '=' has a predefined meaning in mathematics, I agree it's a bad choice of symbols for an assignment operator. 
+
+Further explanation here on the ""="" and ""<-"" discussion: https://stackoverflow.com/questions/1741820/what-are-the-differences-between-and-assignment-operators-in-r"
+"Tuesday, September 22, 2020",Is there anything that can be done with vectorization that can't be done with loops? ,"One thing is that there are functions that can parallel process operations on elements of the list. There are different more ""for"" looking functions that can do can also parallel process things. Another difference is that any assignment in a for loop appears in the global environment if the operations were done in something like lapply they would not. 
+
+This is a great overview of the pros and cons of vectorization and looping: https://bookdown.org/rdpeng/rprogdatascience/vectorized-operations.html"
+"Tuesday, September 22, 2020","How does time saved running your vectorized code trade off against extra time and effort needed to figure out how to write it, versus just looping? ","I find that scripting a for loop takes about the same amount of time as lapply. If you have operations where subsequent iterations depend on the results of prior iterations, I find it's better to use a for loop. 
+
+And FYI, vectorization is also an option in matlab and Gauss, in case anyone uses those languages... https://bookdown.org/rdpeng/rprogdatascience/"
+"Tuesday, September 22, 2020",Is there a NOAA color palette we can load?,"https://www.cio.noaa.gov/noaa-style-guide/design-elements-left-nav.html
+
+https://github.com/emilyhmarkowitz/NOAAFisheriesComms
+
+https://github.com/James-Thorson-NOAA/VAST/issues/163
+
+https://github.com/jordanwatson/NOAA_Branding/blob/master/NOAA_branding_508.R"

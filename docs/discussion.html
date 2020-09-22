@@ -11,7 +11,7 @@
 
 
 
-<title>R Workshop for Social Scientists</title>
+<title>Discussion during Workshop</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -48,7 +48,6 @@
 
 </head>
 
-<div><img src="cover_with_logo.JPG" width="100%" align="center"></div>
 
 </html>
 
@@ -383,15 +382,180 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">R Workshop for Social Scientists</h1>
+<h1 class="title toc-ignore">Discussion during Workshop</h1>
 
 </div>
 
 
-<div id="this-is-the-website-for-all-of-the-materials-youll-need-for-the-workshop." class="section level2">
-<h2><strong>This is the website for all of the materials you’ll need for the workshop.</strong></h2>
-<div id="enjoy" class="section level3">
-<h3>Enjoy!</h3>
+<p><em>Please click on the title to see the session description</em></p>
+<style type="text/css">
+.schedule {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.limit {
+  width: 100%;
+  padding: 5px 0 5px 0;
+}
+
+.workshops-button {
+  padding: 0.75em 1.25em;
+  background-color: #cccccc;
+  opacity: 0.9;
+  width: auto;
+  color: black;
+  text-align: center;
+  overflow: auto;
+}
+
+.workshops-button {
+  padding: 0.75em 1.25em;
+  background-color: #cccccc;
+  opacity: 0.9;
+  width: auto;
+  color: black;
+  text-align: center;
+  overflow: auto;
+}
+
+.left-date {
+  width: 20%;
+  float: left;
+  text-align: left;
+}
+
+.center-title {
+  width: 60%;
+  float: left;
+  text-align: left;
+  font-size: 120%;
+}
+
+.right-authors {
+  width: 20%;
+  float: right;
+  text-align: right;
+}
+
+.workshops {
+  margin: 1em 1em 0 0;
+}
+
+.active {
+  background-color: #333333;
+  color: whitesmoke;
+}
+
+</style>
+<script type="text/javascript">
+function main() {
+  $('.schedule').hide();
+  $('.schedule').fadeIn(2000);
+  $('.workshops').hide();
+  $('.workshops-button').on('click', function() {
+    $(this).next().slideToggle(400);
+    $(this).toggleClass('active');
+  });
+}
+ 
+$(document).ready(main);
+</script>
+<div id="tuesday-september-22-2020" class="section level2">
+<h2>Tuesday, September 22, 2020</h2>
+<div class="schedule">
+<div class="limit">
+<div class="workshops-button">
+<div class="left-date">Tuesday, September 22, 2020</div>
+<div class="center-title">
+<b>Is there any difference in R between ' and "?</b>
+</div>
+<div class="right-authors"></div>
+</div>
+<ul class="workshops">
+<li>
+<p>You can use them interchangeably, but it can be useful if you have a conjunction or some other text that uses ' or ' (e.g., 'can't' or 'as I quote 'blah' '). If you have both ' and ' in your text, then you need to use a regex format, which is a whole other can of beans. </p>
+<p>To learn more about regex: https://regexr.com/</p>
+</li>
+</ul>
+</div>
+<div class="limit">
+<div class="workshops-button">
+<div class="left-date">Tuesday, September 22, 2020</div>
+<div class="center-title">
+<b>So are your data all is csv or excel on a desktop? Can you also pull datasets from a server? Does that require using github?</b>
+</div>
+<div class="right-authors"></div>
+</div>
+<ul class="workshops">
+<li>
+<p>Nope! You can load and work with almost all kinds of data!</p>
+</li>
+</ul>
+</div>
+<div class="limit">
+<div class="workshops-button">
+<div class="left-date">Tuesday, September 22, 2020</div>
+<div class="center-title">
+<b>What is the difference between "=" and "&lt;-"?</b>
+</div>
+<div class="right-authors"></div>
+</div>
+<ul class="workshops">
+<li>
+<p>the use of '=' as an assignment operator dates back to Fortran and other early generation programming languages.  Given that '=' has a predefined meaning in mathematics, I agree it's a bad choice of symbols for an assignment operator. </p>
+<p>Further explanation here on the '=' and '&lt;-' discussion: https://stackoverflow.com/questions/1741820/what-are-the-differences-between-and-assignment-operators-in-r</p>
+</li>
+</ul>
+</div>
+<div class="limit">
+<div class="workshops-button">
+<div class="left-date">Tuesday, September 22, 2020</div>
+<div class="center-title">
+<b>Is there anything that can be done with vectorization that can't be done with loops?</b>
+</div>
+<div class="right-authors"></div>
+</div>
+<ul class="workshops">
+<li>
+<p>One thing is that there are functions that can parallel process operations on elements of the list. There are different more 'for' looking functions that can do can also parallel process things. Another difference is that any assignment in a for loop appears in the global environment if the operations were done in something like lapply they would not. </p>
+<p>This is a great overview of the pros and cons of vectorization and looping: https://bookdown.org/rdpeng/rprogdatascience/vectorized-operations.html</p>
+</li>
+</ul>
+</div>
+<div class="limit">
+<div class="workshops-button">
+<div class="left-date">Tuesday, September 22, 2020</div>
+<div class="center-title">
+<b>How does time saved running your vectorized code trade off against extra time and effort needed to figure out how to write it, versus just looping?</b>
+</div>
+<div class="right-authors"></div>
+</div>
+<ul class="workshops">
+<li>
+<p>I find that scripting a for loop takes about the same amount of time as lapply. If you have operations where subsequent iterations depend on the results of prior iterations, I find it's better to use a for loop. </p>
+<p>And FYI, vectorization is also an option in matlab and Gauss, in case anyone uses those languages... https://bookdown.org/rdpeng/rprogdatascience/</p>
+</li>
+</ul>
+</div>
+<div class="limit">
+<div class="workshops-button">
+<div class="left-date">Tuesday, September 22, 2020</div>
+<div class="center-title">
+<b>Is there a NOAA color palette we can load?</b>
+</div>
+<div class="right-authors"></div>
+</div>
+<ul class="workshops">
+<li>
+<p>https://www.cio.noaa.gov/noaa-style-guide/design-elements-left-nav.html</p>
+<p>https://github.com/emilyhmarkowitz/NOAAFisheriesComms</p>
+<p>https://github.com/James-Thorson-NOAA/VAST/issues/163</p>
+<p>https://github.com/jordanwatson/NOAA_Branding/blob/master/NOAA_branding_508.R</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 
