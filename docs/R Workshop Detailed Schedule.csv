@@ -3,7 +3,7 @@ Date,Start Time (PT),End Time (PT),Course Segment,Topics,Presenter,Host,Chat/Q&A
 "Tuesday, September 22, 2020",8:00 AM,8:50:AM,Help Desk,Help Desk,,Aaron Mamula & Emily Markowitz,,"An informal opprotunity to come by to ask any questions you have about the course, content, or with specific questions about issues you have in your own analyses."
 "Tuesday, September 22, 2020",9:00 AM,9:50:AM,Intro to Data Analysis in R,Importing Data,Aaron Mamula,Emily Markowitz,Erin Steiner,"Core illustrations include importing data from spreadsheet type applications, importing STATA .dta files and importing SAS data files.  
 
-Lesson: https://github.com/aaronmams/rHD-Data-Import-Export/blob/master/Lesson-3-More-Data-Import-Examples.html
+Lesson: https://raw.githubusercontent.com/aaronmams/rHD-Data-Import-Export/master/Lesson-3-More-Data-Import-Examples.html
 
 GitHub Repository: https://github.com/aaronmams/rHD-Data-Import-Export"
 "Tuesday, September 22, 2020",10:00 AM,10:50:AM,Intro to Data Analysis in R,Data Wrangling,Aaron Mamula,Emily Markowitz,Ben Fissel,"Introduction to vectors, lists, and data frames. Introduction to the dplyr package for tidy data organization
@@ -22,7 +22,7 @@ GitHub Repository Causal Inference: https://github.com/aaronmams/rHD-Causal-Infe
 "Wednesday, September 23, 2020",8:00 AM,8:50:AM,Help Desk,Help Desk,Erin Steiner,Aaron Mamula & Emily Markowitz,,"An informal opprotunity to come by to ask any questions you have about the course, content, or with specific questions about issues you have in your own analyses."
 "Wednesday, September 23, 2020",9:00 AM,9:30:AM,Intro to Data Analysis in R,Databases,Aaron Mamula,Emily Markowitz,Erin Steiner,"Minimal Working Example (MWE) of a database query in R. 
 
-Lesson: https://github.com/aaronmams/rHD-Data-Import-Export/blob/master/Lesson-3-More-Data-Import-Examples.html
+Lesson: https://raw.githubusercontent.com/aaronmams/rHD-Data-Import-Export/master/Lesson-3-More-Data-Import-Examples.html
 
 GitHub Repository: https://github.com/aaronmams/rHD-Data-Import-Export "
 "Wednesday, September 23, 2020",9:30 AM,10:00:AM,Intro to Data Analysis in R,Text Data,Aaron Mamula,Emily Markowitz,Erin Steiner,"MWE of working with .pdfs and text/character data. 
