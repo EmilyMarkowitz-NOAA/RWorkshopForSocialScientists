@@ -20,6 +20,12 @@ navbar:
       href: members.html
     - text: ""
       href: BestScriptingPractices.nb.html
+    - text: ""
+      href: Lesson-3-More-Data-Import-Examples.html
+    - text: ""
+      href: sfconsmod_final_2col.html
+    - text: ""
+      href: sfconsmod_riskfactors_subplots.html
   right:
     - icon: fa-envelope-o
       href: mailto:emily.markowitz@noaa.gov                      # CHANGE HERE 
