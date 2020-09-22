@@ -30,10 +30,6 @@
 <script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
 <link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
 <script src="site_libs/leaflet-binding-2.0.3/leaflet.js"></script>
-<script src="site_libs/popup-0.0.1/popup.js"></script>
-<link id="image-AaronMamula-attachment" rel="attachment" href="site_libs/image-0.0.1/AaronMamula.png"/>
-<link id="image-EmilyMarkowitz-attachment" rel="attachment" href="site_libs/image-0.0.1/EmilyMarkowitz.png"/>
-<link id="image-ErinSteiner-attachment" rel="attachment" href="site_libs/image-0.0.1/ErinSteiner.png"/>
 <link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
 <script src="site_libs/datatables-binding-0.15/datatables.js"></script>
 <link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -354,7 +350,16 @@ $(document).ready(function () {
   </a>
 </li>
 <li>
-  <a href="BestScriptingPractices.nb.html"></a>
+  <a href="les_BestScriptingPractices.nb.html"></a>
+</li>
+<li>
+  <a href="les_Lesson-3-More-Data-Import-Examples.html"></a>
+</li>
+<li>
+  <a href="les_sfconsmod_final_2col.html"></a>
+</li>
+<li>
+  <a href="les_sfconsmod_riskfactors_subplots.html"></a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -390,10 +395,13 @@ $(document).ready(function () {
 </div>
 
 
-<div id="htmlwidget-1e916ad592cc6d0dd967" style="width:672px;height:480px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1e916ad592cc6d0dd967">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[[45.510209,47.640816,41.526796,47.640816],[-122.669898,-122.3361978,-70.675144,-122.336197],null,null,"points",{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["<b> Rob Ames <\/b> \n                         <br/>  Pacific States Marine Fisheries Commission <br/>  ","<b> Ben Fissel <\/b> \n                         <br/>  Alaska Fisheries Science Center <br/>  ","<b> Geret Depiper <\/b> \n                         <br/>  Northeast Fisheries Science Center <br/>  ","<b> Allen Chen <\/b> \n                         <br/>  Northwest Fisheries Science Center <br/>  "],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[[36.956806,41.197558,47.640816],[-122.02139,-73.897447,-122.336197],null,null,"withgit",{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["<b> Aaron Mamula <\/b> \n                         <br/>  Southwest Fisheries Science Center <br/>  <a href = https://github.com/aaronmams> GitHub <\/a> ","<b> Emily Markowitz <\/b> \n                         <br/>  Office of Science and Technology/Alaska Fisheries Science Center <br/>  <a href = https://github.com/emilyhmarkowitz> GitHub <\/a> ","<b> Erin Steiner <\/b> \n                         <br/>  Northwest Fisheries Science Center <br/>  <a href = https://github.com/erinsteiner-NOAA> GitHub <\/a> "],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"imagePopup","args":[["AaronMamula.png","EmilyMarkowitz.png","ErinSteiner.png"],"withgit",[300,300,300],[350,350,350],["l","l","l"],["AaronMamula","EmilyMarkowitz","ErinSteiner"]]}],"limits":{"lat":[36.956806,47.640816],"lng":[-122.669898,-70.675144]}},"evals":[],"jsHooks":[]}</script>
-<div id="htmlwidget-1f01034a2a1bfa7ee37d" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1f01034a2a1bfa7ee37d">{"x":{"filter":"none","data":[["Aaron Mamula","Emily Markowitz","Erin Steiner","Rob Ames","Ben Fissel","Geret Depiper","Allen Chen"],["Southwest Fisheries Science Center","Office of Science and Technology/Alaska Fisheries Science Center","Northwest Fisheries Science Center","Pacific States Marine Fisheries Commission","Alaska Fisheries Science Center","Northeast Fisheries Science Center","Northwest Fisheries Science Center"],["https://github.com/aaronmams","https://github.com/emilyhmarkowitz","https://github.com/erinsteiner-NOAA","","","",""]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Name<\/th>\n      <th>Institution<\/th>\n      <th>GitHub<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-005e16e4bede91ef7589" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-005e16e4bede91ef7589">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[[36.956806,41.197558,47.640816,45.510209,47.640816,41.526796,47.640816],[-122.02139,-73.897447,-122.336197,-122.669898,-122.3361978,-70.675144,-122.336197],null,null,"points",{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["<b> Aaron Mamula <\/b> \n                         <br/>  Southwest Fisheries Science Center <br/>  <a href = https://github.com/aaronmams> GitHub <\/a> ","<b> Emily Markowitz <\/b> \n                         <br/>  Office of Science and Technology/Alaska Fisheries Science Center <br/>  <a href = https://github.com/emilyhmarkowitz> GitHub <\/a> ","<b> Erin Steiner <\/b> \n                         <br/>  Northwest Fisheries Science Center <br/>  <a href = https://github.com/erinsteiner-NOAA> GitHub <\/a> ","<b> Rob Ames <\/b> \n                         <br/>  Pacific States Marine Fisheries Commission <br/>  ","<b> Ben Fissel <\/b> \n                         <br/>  Alaska Fisheries Science Center <br/>  ","<b> Geret Depiper <\/b> \n                         <br/>  Northeast Fisheries Science Center <br/>  <a href = https://github.com/gdepiper> GitHub <\/a> ","<b> Allen Chen <\/b> \n                         <br/>  Northwest Fisheries Science Center <br/>  <a href = https://github.com/allen-chen-noaa-gov> GitHub <\/a> "],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[36.956806,47.640816],"lng":[-122.669898,-70.675144]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-bd1f1b85aba791d37c89" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bd1f1b85aba791d37c89">{"x":{"filter":"none","data":[["Aaron Mamula","Emily Markowitz","Erin Steiner","Rob Ames","Ben Fissel","Geret Depiper","Allen Chen"],["Southwest Fisheries Science Center","Office of Science and Technology/Alaska Fisheries Science Center","Northwest Fisheries Science Center","Pacific States Marine Fisheries Commission","Alaska Fisheries Science Center","Northeast Fisheries Science Center","Northwest Fisheries Science Center"],["https://github.com/aaronmams","https://github.com/emilyhmarkowitz","https://github.com/erinsteiner-NOAA","","","https://github.com/gdepiper","https://github.com/allen-chen-noaa-gov"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Name<\/th>\n      <th>Institution<\/th>\n      <th>GitHub<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"dom":"t","order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div id="httpsgithub.comaaronmams-httpsgithub.comemilyhmarkowitz-httpsgithub.comerinsteiner-noaa-httpsgithub.comgdepiper-httpsgithub.comallen-chen-noaa-gov" class="section level1">
+<h1><img src="images/aaronmamula.png" alt="https://github.com/aaronmams" />, <img src="images/EmilyMarkowitz.png" alt="https://github.com/emilyhmarkowitz" />, <img src="images/ErinSteiner.png" alt="https://github.com/erinsteiner-NOAA" />, <img src="images/GeretDepiper.png" alt="https://github.com/gdepiper" />, <img src="images/AllenChen.png" alt="https://github.com/allen-chen-noaa-gov" /></h1>
+</div>
 
 
 

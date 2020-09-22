@@ -22,8 +22,8 @@ members<-data.frame("Name" = c("Aaron Mamula", "Emily Markowitz", "Erin Steiner"
                     "First Name" = c("Aaron", "Emily", "Erin", "Rob", "Ben", "Geret", "Allen"),
                     "Last Name" = c("Mamula", "Markowitz", "Steiner", "Ames", "Fissel", "Depiper", "Chen"),
                     "github" = c("aaronmams", "emilyhmarkowitz", "erinsteiner-NOAA",
-                                 "", "", "",  
-                                 ""), 
+                                 "", "", "gdepiper",  
+                                 "allen-chen-noaa-gov"), 
                     "lat" = c(36.956806, 41.197558, 47.640816, 
                               45.510209, 47.640816, 41.526796, 
                               47.640816), 
@@ -41,7 +41,7 @@ members$imagelink<-members$githublink<-NA
 members$Status<-"Presenter"
 for (i in 1:nrow(members)) {
   # if (!(members$github[i] %in% "")) {
-    members$imagelink[i]<-paste0("./docs/images/", gsub(pattern = " ", replacement = "", 
+    members$imagelink[i]<-paste0("./images/", gsub(pattern = " ", replacement = "", 
                                                         x = members$Name[i]), 
                                  ".png")
     webshot(url = paste0("https://github.com/", members$github[i]),
