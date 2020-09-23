@@ -53,24 +53,22 @@ US -- +1 617-675-4444‬
 PIN -- ‪907 674 490 3762‬#"
 "Wednesday, September 23, 2020",12:00 PM,1:00:PM,R Happy Hour,Help Desk/Show and Tell/R Shiny,Ashley Vizek,Aaron Mamula,Erin Steiner,"Introduction to interactive data visualizations using R. 
 
-FishEye: https://dataexplorer.northwestscience.fisheries.noaa.gov/fisheye GitHub: https://github.com/nwfsc-fram/FishEyeApp
+FishEye: https://dataexplorer.northwestscience.fisheries.noaa.gov/fisheye/
 
-Google Hangout: https://calendar.google.com/event?action=TEMPLATE&tmeid=N3ZpZzY1bW5sZW5mM2hsY2lyY2FjYTBycXEgZW1pbHkubWFya293aXR6QG5vYWEuZ292&tmsrc=emily.markowitz%40noaa.gov
-
-‪US +1 617-675-4444‬
-
-PIN ‪907 674 490 3762 ‬#"
+GitHub: https://github.com/nwfsc-fram/FishEyeApp"
 "Thursday, September 24, 2020",8:00 AM,8:50:AM,Help Desk,Help Desk,Erin Steiner,Aaron Mamula & Emily Markowitz,Ashley Vizek,"If no one has specific questions, we'll go over projects in RStudio and how to use the to manage your workflow."
 "Thursday, September 24, 2020",9:00 AM,9:50:AM,Intermediate/Advanced Topics,"R Workflows, Best Practices, Writing Elegant Code",Emily Markowitz,Aaron Mamula,Erin Steiner,"Learn about how to write and prepare a script by 1. conforming to a predictable script structure, 2. annotation, 3. never repeating code, 4. naming files with predictable and helpful names, 5. predictable folder structure, 6. saving scripts in an “R Project.” 
 
 Lesson: https://emilyhmarkowitz.github.io/RWorkshopForSocialScientists/BestScriptingPractices.nb.html
 
 GitHub Repository BestScriptingPractices: https://github.com/emilyhmarkowitz/BestScriptingPractices"
-"Thursday, September 24, 2020",10:00 AM,10:50:AM,Intermediate/Advanced Topics,R Markdown,Geret Depiper,Emily Markowitz,Aaron Mamula,"HTML for Conceptual Model:
+"Thursday, September 24, 2020",10:00 AM,10:50:AM,Intermediate/Advanced Topics,R Markdown,Geret Depiper,Emily Markowitz,Aaron Mamula,"Presentation: https://gdepiper.github.io/RWorkshopSocialsci_GD/
 
-Lesson 1: https://gdepiper.github.io/Summer_Flounder_Conceptual_Models/sfconsmod_riskfactors_subplots.html
+HTML for Conceptual Model: 
 
-Lesson 2: https://gdepiper.github.io/Summer_Flounder_Conceptual_Models/sfconsmod_final_2col.html
+Example 1: https://gdepiper.github.io/Summer_Flounder_Conceptual_Models/sfconsmod_riskfactors_subplots.html
+
+Example 2: https://gdepiper.github.io/Summer_Flounder_Conceptual_Models/sfconsmod_final_2col.html
 
 GitHub Repository for Conceptual Model: https://github.com/gdepiper/Summer_Flounder_Conceptual_Models.git"
 "Thursday, September 24, 2020",11:00 AM,11:50:AM,Intermediate/Advanced Topics,Functional Programming & BioEconomics,Allen Chen,Emily Markowitz,Aaron Mamula,"Learn how functional programming helps reduce redundancy and duplication in code, and how to use R packages to share/document your code and projects with others!
