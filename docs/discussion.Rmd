@@ -187,3 +187,60 @@ div(
 )
 ```
 
+<br>
+
+
+## Wednesday, September 23, 2020
+
+```{r}
+program1<-program[grepl(pattern = "Wednesday, September 23, 2020", x = Discussion0$Date), ]
+
+div(
+  class = "schedule",
+  apply(program1, 1, function(event) {
+    div(
+      class = "limit",
+      div(class = "workshops-button",
+          div(class = "left-date",
+              event[['Date']]),
+          div(class = "center-title",
+              # tags$i(event[['Title']])),
+              tags$b(event[['Topic']])),
+          div(class = "right-authors",
+              event[['Authors']])),
+      tags$ul(class = "workshops",
+              (eval(parse(text=event[["Notes"]])) ) )
+              # event[["Notes"]])
+    )
+  })
+)
+```
+
+<br>
+
+
+## Thursday, September 24, 2020
+
+```{r}
+program1<-program[grepl(pattern = "Thursday, September 24, 2020", x = Discussion0$Date), ]
+
+div(
+  class = "schedule",
+  apply(program1, 1, function(event) {
+    div(
+      class = "limit",
+      div(class = "workshops-button",
+          div(class = "left-date",
+              event[['Date']]),
+          div(class = "center-title",
+              # tags$i(event[['Title']])),
+              tags$b(event[['Topic']])),
+          div(class = "right-authors",
+              event[['Authors']])),
+      tags$ul(class = "workshops",
+              (eval(parse(text=event[["Notes"]])) ) )
+              # event[["Notes"]])
+    )
+  })
+)
+```
