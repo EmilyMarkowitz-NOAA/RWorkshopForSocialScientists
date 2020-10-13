@@ -1,0 +1,42 @@
+name: "R Workshop for Social Scientist"                                  # CHANGE HERE 
+output_dir: "."
+navbar:
+  title: "<p><img id=\"logo\" style=\"width: 20px;\" src=\"Noaa_logo.png\" /> R Workshop for Social Scientist </p>"    
+  left:
+    - text: "About"
+      icon: fa-briefcase
+      href: about.html  
+    - text: "Agenda"
+      icon: fa-calendar
+      href: sessions.html  
+    - text: "Pre-meet materials"
+      icon: fa-check
+      href: pre-meet.html  
+    - text: "Other Resources"
+      icon: fa-plus 
+      href: otherresources.html
+    - text: "Presenters"
+      icon: fa-user 
+      href: members.html
+    - text: "Discussion"
+      icon: fa-question 
+      href: discussion.html
+    - text: ""
+      href: les_BestScriptingPractices.nb.html
+    - text: ""
+      href: les_Lesson-3-More-Data-Import-Examples.html
+    - text: ""
+      href: les_sfconsmod_final_2col.html
+    - text: ""
+      href: les_sfconsmod_riskfactors_subplots.html
+  right:
+    - icon: fa-envelope-o
+      href: mailto:emily.markowitz@noaa.gov                      # CHANGE HERE 
+    - icon: fa-github
+      href: https://github.com/emilyhmarkowitz/RWorkshopForSocialScientists         # CHANGE HERE 
+    - icon: fa-google
+      href: https://drive.google.com/drive/folders/1gzMhlkt-rbpKAGaf7_F9zCOjFTtdaU6T?usp=sharing
+output:
+  html_document:
+    theme: flatly
+    highlight: textmate

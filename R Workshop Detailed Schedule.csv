@@ -57,7 +57,7 @@ FishEye: https://dataexplorer.northwestscience.fisheries.noaa.gov/fisheye/
 
 GitHub: https://github.com/nwfsc-fram/FishEyeApp"
 "Thursday, September 24, 2020",8:00 AM,8:50:AM,Help Desk,Help Desk,Erin Steiner,Aaron Mamula & Emily Markowitz,Ashley Vizek,"If no one has specific questions, we'll go over projects in RStudio and how to use the to manage your workflow."
-"Thursday, September 24, 2020",9:00 AM,9:50:AM,Intermediate/Advanced Topics,"R Workflows, Best Practices, Writing Elegant Code",Emily Markowitz,Aaron Mamula,Erin Steiner,"Learn about how to write and prepare a script by 1. conforming to a predictable script structure, 2. annotation, 3. never repeating code, 4. naming files with predictable and helpful names, 5. predictable folder structure, 6. saving scripts in an “R Project.” 
+"Thursday, September 24, 2020",9:00 AM,9:50:AM,Intermediate/Advanced Topics,"R Workflows, Best Practices, Writing Elegant Code",Emily Markowitz,Aaron Mamula,Erin Steiner,"Learn about how to write and prepare a script by 1. conforming to a predictable script structure, 2. annotation, 3. never repeating code, 4. naming files with predictable and helpful names, 5. predictable folder structure, 6. scripts with specific tasks, 7. saving scripts in an “R Project.” 
 
 Lesson: https://raw.githubusercontent.com/emilyhmarkowitz/BestScriptingPractices/master/rscripts/BestScriptingPractices.nb.html
 
