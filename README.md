@@ -19,6 +19,18 @@ Santa Cruz, CA 95060
 
 **Emily Markowitz** (Emily.Markowitz AT noaa.gov)
 
+*Then:*
+
+Office of Science and Technology, 
+
+National Marine Fisheries Service, 
+
+National Oceanic and Atmospheric Administration,
+
+Silver Spring, MD 20910
+
+*Currently:*
+
 Alaska Fisheries Science Center, 
 
 National Marine Fisheries Service, 
