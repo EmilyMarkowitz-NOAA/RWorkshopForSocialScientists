@@ -1,12 +1,12 @@
 # R Workshop for NOAA Fisheries Social Scientists
 
-Course held virtally September 2020 with 60 participants!
+**Course held virtally September 2020 with 60 participants!**
 
 For more information, check out the course's website at https://emilyhmarkowitz.github.io/RWorkshopForSocialScientists/
 
 ## The course was co-hosted by:
 
-**Aaron Mamula** (Aaron.Mamula AT noaa.gov
+**Aaron Mamula** (Aaron.Mamula AT noaa.gov)
 
 Southwest Fisheries Science Center, 
 
