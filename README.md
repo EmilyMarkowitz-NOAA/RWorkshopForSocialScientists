@@ -2,7 +2,7 @@
 
 **Course held virtally September 2020 with 60 participants!**
 
-For more information, check out the course's website at https://emilyhmarkowitz.github.io/RWorkshopForSocialScientists/
+For more information, check out the course's website at https://EmilyMarkowitz-NOAA.github.io/RWorkshopForSocialScientists/
 
 ## The course was co-hosted by:
 
